@@ -6,7 +6,8 @@ public class Main {
 		
 		Room room= new Room(Color.returnRandomColor());
 		System.out.println("What do you want to do?");
-		System.out.println("    (0) Look Around");
+		System.out.println("  (0) Look Around");
+		System.out.println("  (1) Look for a way out");
 		
 		int choice = input.nextInt();
 		
@@ -14,6 +15,8 @@ public class Main {
 			
 			System.out.print("You see: ");
 			room.roomDescription();
+		}else if(choice == 1){
+			room.doorDescription();
 		}
 
 	}
