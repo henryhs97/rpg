@@ -1,16 +1,6 @@
-public class Doors {
-	
-	private String Color;
-	
-	public Doors (String color) {
-		this.Color=color;
-	}
-	
-	public String returnColor(){
-		return this.Color;
-	}
-	
-	
-	
-	
+public class Doors extends Inspectable{
+
+    public Doors (String s){
+        super(s);
+    }
 }

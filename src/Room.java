@@ -1,10 +1,9 @@
 
-public class Room{
-	private String color;
-	
-	public Room(String s){
-		this.color=s;
-	}
+public class Room extends Inspectable{
+
+    public Room(String s){
+        super(s);
+    }
 	
 	private Doors door1= new Doors(Color.returnRandomColor());
 	private Doors door2= new Doors(Color.returnRandomColor());
