@@ -1,6 +1,8 @@
-public class Doors extends Inspectable{
+public class Door extends Inspectable{
 
-    public Doors (String s){
+    public Door (String s){
         super(s);
     }
+    
+    
 }

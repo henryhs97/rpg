@@ -7,6 +7,7 @@ public class Room extends Inspectable{
 
     private List<Door> doorList = new ArrayList<Door>();
 
+
     private int numOfDoors;
 
     public Room(String s){

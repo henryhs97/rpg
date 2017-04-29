@@ -1,4 +1,4 @@
-public abstract class Inspectable {
+public abstract class Inspectable {   //every inspectable object has a color accessed through .color
 
     protected String color;
 
