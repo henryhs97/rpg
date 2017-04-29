@@ -9,7 +9,7 @@ public class Environment{
 	
 	public Environment() {
 		for(int i=0; i<numberOfRooms ;i++) {
-			rooms[i]=new Room(Color.returnRandomColor());
+			rooms[i]=new Room(Color.returnRandomColor(), i);  //a random 
 		}
 	}
 	

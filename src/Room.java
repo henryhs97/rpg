@@ -3,28 +3,33 @@ import java.util.*;
 
 public class Room extends Inspectable{
 
-
-
     private List<Door> doorList = new ArrayList<Door>();
-
-
     private int numOfDoors;
+    	
+	Random ran = new Random();
+	int random = ran.nextInt(3); //at most 3 doors per room
+    
 
-    public Room(String s){
+    public Room(String s, int current) {
         super(s);
         Random rand = new Random();
-        numOfDoors = rand.nextInt(5) + 1;
-        for(int i = 0; i < numOfDoors; i++) {
-            doorList.add(new Door(Color.returnRandomColor()));
+        numOfDoors = rand.nextInt(5) + 1;       
+        
+        for(int i = 0; i < numOfDoors; i++) { //0 is reserved for previous one
+            doorList.add(new Door(Color.returnRandomColor(), rand.nextInt(numOfDoors), current ) );
         }
+    }
+    
+    public Door returnDoor(int number) {
+    	return doorList.get(number);  	
     }
 
 	public void roomDescription() {
-		System.out.print("a " + color +" room with a ");
+		System.out.print("A " + color +" room with a ");
         for(int i = 0; i < numOfDoors - 1; i++) {
             System.out.print(doorList.get(i).returnColor() + " door and a ");
         }
-        System.out.print(doorList.get(numOfDoors - 1).returnColor() + " door.");
+        System.out.println(doorList.get(numOfDoors - 1).returnColor() + " door.");
 	}
 
 	public void doorDescription() {
