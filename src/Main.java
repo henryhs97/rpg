@@ -6,14 +6,15 @@ public class Main {
 		
 		Environment environment= new Environment();  //makes environment
 		Player player= new Player(100,5);
-		player.inventory.add(new Weapon("Rusty pickaxe", 10, 10));
+        player.inventory.add(new Weapon("Rusty hammer", 15, 10));
+        player.inventory.add(new Weapon("Rusty pickaxe", 10, 10));
         player.inventory.add(new Consumable("Cure", Consumable.CURE));
         player.inventory.add(new Consumable("Healing potion", Consumable.HEAL));
         player.inventory.add(new Consumable("Steroids", Consumable.MAKE_SWOLLE));
 
 
-        int number=1;
-		while(number != environment.numberOfRooms) { //game ends in the last room
+        int number=0;
+		while(true) { //game ends in the last room
 			if(player.getHealth() <= 0){
 				System.out.println("You died.. GG");
 				break;
@@ -40,6 +41,7 @@ public class Main {
 			        	player.poisonDamage();
 					}
 			        number = player.enterDoor( environment.returnRoom(number).returnDoor(choice) );
+
 					break;
                 case 2:
                     player.checkInventory(input);

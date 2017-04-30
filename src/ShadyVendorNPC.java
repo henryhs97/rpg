@@ -26,11 +26,11 @@ public class ShadyVendorNPC extends NPC implements Shop{
 	}
 
 	public void showShopItems() {
-		System.out.println("  (0) Health Potion");
-		System.out.println("  (1) Kitchen knife (1 use)");
-		System.out.println("  (2) Knight Sword (4 uses)");
-		System.out.println("  (3) Refined Knight Sword (5 uses)");
-		System.out.println("  (4) Refined Knight Sword (6 uses)");
+		System.out.println("  (0) Health Potion (1 use)- 5 gold");
+		System.out.println("  (1) Kitchen knife (1 use)- 7 gold");
+		System.out.println("  (2) Knight Sword (4 uses)- 10 gold");
+		System.out.println("  (3) Steroids (1 use)- 20 gold");
+		System.out.println("  (4) Refined Knight Sword (6 uses)- 25 gold");
 	}
 
 	public static void putInInventory(int itemChoice) {
