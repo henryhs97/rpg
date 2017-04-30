@@ -1,11 +1,11 @@
 public class Door extends Inspectable{
 
-	int nextRoom, currentRoom;
+	int nextRoom, previousRoom;
 	
-    public Door(String s, int next, int current) {
+    public Door(String s, int next, int previous) {
         super(s);
         this.nextRoom = next;
-        this.currentRoom = current;
+        this.previousRoom=previous;
 	}
     
 
