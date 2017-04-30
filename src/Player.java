@@ -29,15 +29,21 @@ public class Player {
             System.out.println("  (" + i + ") " + inventory.get(i).inspect());
         }
         this.itemChoice = input.nextInt();
-        if(this.itemChoice != -1){
-            if(equippedWeapon == null) {
-                inventory.get(this.itemChoice).interact(this);
-                inventory.remove(this.itemChoice);
-            }else{
-                decreaseDamage(equippedWeapon.getDamage());
-                inventory.add(equippedWeapon);
-                inventory.get(this.itemChoice).interact(this);
+	    if(inventory.get(itemChoice) instanceof Weapon) {
+            if (this.itemChoice != -1) {
+                if (equippedWeapon == null) {
+                    inventory.get(this.itemChoice).interact(this);
+                    inventory.remove(this.itemChoice);
+                } else {
+                    decreaseDamage(equippedWeapon.getDamage());
+                    inventory.add(equippedWeapon);
+                    inventory.get(this.itemChoice).interact(this);
+                    inventory.remove(itemChoice);
+                }
             }
+        }else{
+	        inventory.get(itemChoice).interact(this);
+	        inventory.remove(itemChoice);
         }
 
     }
