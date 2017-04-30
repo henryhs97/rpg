@@ -9,5 +9,4 @@ public abstract class Inspectable {   //every inspectable object has a color acc
     public String inspect (){
         return this.description;
     }
-    
 }

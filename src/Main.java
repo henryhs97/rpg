@@ -5,14 +5,19 @@ public class Main {
 		Scanner input= new Scanner(System.in);
 		
 		Environment environment= new Environment();  //makes envirnment
-		Player player= new Player();
+		Player player= new Player(100,5);
 		
 		
 		int number=1;
 		while(number != environment.numberOfRooms) { //game ends in the last room
+			if(player.getHealth() <= 0){
+				System.out.println("You died.. GG");
+				break;
+			}
 			System.out.println("What do you want to do?");
 			System.out.println("  (0) Look Around");
 			System.out.println("  (1) Look for a way out");
+			System.out.println("  (2) Check your inventory");
 			System.out.println("  there are "+ environment.numberOfRooms + " and in this room there are "+ environment.returnRoom(number).numOfDoors+"doors");
 			int choice = input.nextInt();
 			System.out.print("You see: ");
@@ -26,8 +31,13 @@ public class Main {
 			        System.out.println("Which door do you take? (-1: stay here)");
 			        choice = input.nextInt();
 			        System.out.println("you picked: " + choice);
+			        if(player.getStatus() == Player.POISONED){
+			        	player.poisonDamage();
+					}
 			        number = player.enterDoor( environment.returnRoom(number).returnDoor(choice) );
 					break;
+                case 2:
+                    player.checkInventory(input);
 			}
 		}
 

@@ -5,7 +5,7 @@ public class Room extends Inspectable{
 
     private List<Door> doorList = new ArrayList<Door>();
     int numOfDoors;
-   
+
     public Room(String s, int current, int numberOfRooms) {
         super(s);
         Random rand = new Random();
@@ -25,7 +25,7 @@ public class Room extends Inspectable{
         for(int i = 0; i < numOfDoors - 1; i++) {
             System.out.print(doorList.get(i).inspect() + " door and a ");
         }
-        System.out.println(doorList.get(numOfDoors-1).inspect() + " door.");
+        System.out.println(doorList.get(numOfDoors - 1).inspect() + " door.");
 	}
 
 	public void doorDescription() {
