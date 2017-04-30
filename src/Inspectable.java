@@ -1,12 +1,13 @@
 public abstract class Inspectable {   //every inspectable object has a color accessed through .color
 
-    protected String color;
+    protected String description;
 
     public Inspectable (String s){
-        this.color = s;
+        this.description = s;
     }
 
-    public String returnColor (){
-        return this.color;
+    public String inspect (){
+        return this.description;
     }
+    
 }
