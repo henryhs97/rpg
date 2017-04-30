@@ -4,11 +4,15 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner input= new Scanner(System.in);
 		
-		Environment environment= new Environment();  //makes envirnment
+		Environment environment= new Environment();  //makes environment
 		Player player= new Player(100,5);
-		
-		
-		int number=1;
+		player.inventory.add(new Weapon("Rusty pickaxe", 10, 10));
+        player.inventory.add(new Consumable("Cure", Consumable.CURE));
+        player.inventory.add(new Consumable("Healing potion", Consumable.HEAL));
+        player.inventory.add(new Consumable("Steroids", Consumable.MAKE_SWOLLE));
+
+
+        int number=1;
 		while(number != environment.numberOfRooms) { //game ends in the last room
 			if(player.getHealth() <= 0){
 				System.out.println("You died.. GG");
@@ -18,6 +22,7 @@ public class Main {
 			System.out.println("  (0) Look Around");
 			System.out.println("  (1) Look for a way out");
 			System.out.println("  (2) Check your inventory");
+			System.out.println("  (3) Check your stats");
 			System.out.println("  there are "+ environment.numberOfRooms + " and in this room there are "+ environment.returnRoom(number).numOfDoors+"doors");
 			int choice = input.nextInt();
 			System.out.print("You see: ");
@@ -38,6 +43,8 @@ public class Main {
 					break;
                 case 2:
                     player.checkInventory(input);
+                case 3:
+                    player.checkStats();
 			}
 		}
 

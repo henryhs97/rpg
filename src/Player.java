@@ -8,7 +8,7 @@ public class Player {
     private int status;
     private int damage;
     private int itemChoice;
-    private Weapon equipedWeapon = null;
+    private Weapon equippedWeapon = null;
 
     List<Item> inventory = new ArrayList<>();
 
@@ -30,11 +30,29 @@ public class Player {
         }
         this.itemChoice = input.nextInt();
         if(this.itemChoice != -1){
-            inventory.get(this.itemChoice).interact(this);
+            if(equippedWeapon == null) {
+                inventory.get(this.itemChoice).interact(this);
+                inventory.remove(this.itemChoice);
+            }else{
+                decreaseDamage(equippedWeapon.getDamage());
+                inventory.add(equippedWeapon);
+                inventory.get(this.itemChoice).interact(this);
+            }
         }
 
     }
 
+    public void checkStats(){
+	    System.out.println("Health: " + health);
+	    System.out.println("Status: " + status);
+	    System.out.println("Damage: " + damage);
+	    if(equippedWeapon != null) {
+            System.out.println("Weapon: " + equippedWeapon.inspect());
+            System.out.println("Number of uses left: " + equippedWeapon.checkCondition());
+        }else{
+	        System.out.println("No weapon");
+        }
+    }
     public int getHealth(){
 	    return health;
     }
@@ -52,21 +70,28 @@ public class Player {
     }
 
     public int dealDamage(){
-        if(equipedWeapon != null && !this.equipedWeapon.use()){
-            weaponBroke(equipedWeapon.getDamage());
-            this.inventory.remove(this.equipedWeapon);
-            this.equipedWeapon = null;
+        if(equippedWeapon != null && !this.equippedWeapon.use()){
+            decreaseDamage(equippedWeapon.getDamage());
+            this.inventory.remove(this.equippedWeapon);
+            this.equippedWeapon = null;
         }
         return this.damage;
     }
 
     public void equipWeapon(Weapon choosenWeapon){
-        this.equipedWeapon = choosenWeapon;
-        this.damage += choosenWeapon.getDamage();
+        this.equippedWeapon = choosenWeapon;
+        increaseDamage(equippedWeapon.getDamage());
     }
 
-    public void weaponBroke(int weaponDamage){
-        this.damage -= weaponDamage;
+    public void increaseDamage(int moreDamage){
+        this.damage += moreDamage;
+    }
 
+    public void decreaseDamage(int lessDamage){
+        this.damage -= lessDamage;
+    }
+
+    public void changeStatus(int newStatus){
+        this.status = newStatus;
     }
 }

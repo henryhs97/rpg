@@ -10,7 +10,7 @@ public class Weapon extends Item{
 
     @Override
     public void interact(Player player) {
-        System.out.print("Equiped: " + inspect());
+        System.out.println("Equiped: " + inspect());
         player.equipWeapon(this);
     }
 
@@ -22,8 +22,8 @@ public class Weapon extends Item{
         return true;
     }
 
-    public void checkCondition(){
-        System.out.println("Number of uses left: " + this.uses);
+    public int checkCondition(){
+        return uses;
     }
 
     public int getDamage(){
