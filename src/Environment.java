@@ -3,7 +3,7 @@ import java.util.Random;
 public class Environment{
 	
 	Random ran = new Random();
-	int numberOfRooms = ran.nextInt(5) + 1;
+	int numberOfRooms = ran.nextInt(10) + 3;
 	
 	private Room[] rooms=new Room[numberOfRooms]; 
 	
@@ -14,7 +14,7 @@ public class Environment{
 	}
 	
 	public Room returnRoom(int roomNumber) {
-		if(roomNumber<=numberOfRooms) {
+		if(roomNumber<numberOfRooms) {
 			return rooms[roomNumber];
 		} else {
 			return rooms[roomNumber];

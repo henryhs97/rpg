@@ -9,7 +9,7 @@ public class Room extends Inspectable{
     public Room(String s, int current, int numberOfRooms) {
         super(s);
         Random rand = new Random();
-        numOfDoors = rand.nextInt(5) + 1;       
+        numOfDoors = rand.nextInt(3) + 1;       
         
         for(int i = 0; i < numOfDoors; i++) { //0 is reserved for previous one
             doorList.add(new Door(Color.returnRandomColor(), rand.nextInt(numberOfRooms)+1, current ) );
