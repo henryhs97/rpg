@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Player {
+public class Player implements CanFight{
 
     public static final int HEALTHY = 0;
     public static final int POISONED = 1;

@@ -40,6 +40,9 @@ public class Main {
 			        if(player.getStatus() == Player.POISONED){
 			        	player.poisonDamage();
 					}
+					if(environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor){
+			            player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
+                    }
 			        number = player.enterDoor( environment.returnRoom(number).returnDoor(choice) );
 
 					break;
