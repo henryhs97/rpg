@@ -4,19 +4,19 @@ import java.util.*;
 public class Room extends Inspectable{
 
     private List<Door> doorList = new ArrayList<Door>();
-    private int numOfDoors;
+    int numOfDoors;
     	
 	Random ran = new Random();
 	int random = ran.nextInt(3); //at most 3 doors per room
     
 
-    public Room(String s, int current) {
+    public Room(String s, int current, int numberOfRooms) {
         super(s);
         Random rand = new Random();
         numOfDoors = rand.nextInt(5) + 1;       
         
         for(int i = 0; i < numOfDoors; i++) { //0 is reserved for previous one
-            doorList.add(new Door(Color.returnRandomColor(), rand.nextInt(numOfDoors), current ) );
+            doorList.add(new Door(Color.returnRandomColor(), rand.nextInt(numberOfRooms)+1, current ) );
         }
     }
     
