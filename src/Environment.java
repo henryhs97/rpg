@@ -1,12 +1,14 @@
 public class Environment{
 	int numberOfRooms = 6;
 	
-	private Room[] rooms=new Room[numberOfRooms]; 
-	
+	private Room[] rooms=new Room[numberOfRooms];
+
 	public Environment() {
 		rooms[0]=new Room(Color.returnRandomColor(), 2);  //a random 
 		rooms[0].addDoorToRoom( Color.returnRandomColor(), 1, 0);
 		rooms[0].addDoorToRoom( Color.returnRandomColor(), 3, 0);
+		rooms[0].addEnemyToRoom("A shady man",40, 15);
+		rooms[0].addEnemyToRoom("An even more shady man",60, 25);
 		
 		rooms[1]=new Room(Color.returnRandomColor(), 3);  //a random 
 		rooms[1].addDoorToRoom( Color.returnRandomColor(), 2, 1);

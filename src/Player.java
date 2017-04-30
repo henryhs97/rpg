@@ -63,6 +63,10 @@ public class Player implements CanFight{
 	    return health;
     }
 
+    public int getDamage(){
+        return damage;
+    }
+
     public int getStatus(){
 	    return this.status;
     }
@@ -73,6 +77,9 @@ public class Player implements CanFight{
 
     public void receiveDamage(int atk){
         this.health -= atk;
+        if(this.health < 0){
+            this.health = 0;
+        }
     }
 
     public int dealDamage(){
