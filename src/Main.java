@@ -5,7 +5,7 @@ public class Main {
 		Scanner input= new Scanner(System.in);
 		
 		Environment environment= new Environment();  //makes environment
-		Player player= new Player(100,5);
+		Player player= new Player(100,5, 5);
         player.inventory.add(new Weapon("Rusty hammer", 15, 10));
         player.inventory.add(new Weapon("Rusty pickaxe", 10, 10));
         player.inventory.add(new Consumable("Cure", Consumable.CURE));
@@ -24,32 +24,45 @@ public class Main {
 			System.out.println("  (1) Look for a way out");
 			System.out.println("  (2) Check your inventory");
 			System.out.println("  (3) Check your stats");
-			System.out.println("  there are "+ environment.numberOfRooms + " and in this room there are "+ environment.returnRoom(number).numOfDoors+"doors");
+			System.out.println("  (4) Look for people");
 			int choice = input.nextInt();
 			System.out.print("You see: ");
 			
-			switch(choice) {			
-				case 0:
-					environment.returnRoom(number).roomDescription();
-					break;
-				case 1:
-					environment.returnRoom(number).doorDescription();
-			        System.out.println("Which door do you take? (-1: stay here)");
-			        choice = input.nextInt();
-			        System.out.println("you picked: " + choice);
-			        if(player.getStatus() == Player.POISONED){
-			        	player.poisonDamage();
-					}
-					if(environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor){
-			            player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
+			switch(choice) {
+                case 0:
+                    environment.returnRoom(number).roomDescription();
+                    break;
+                case 1:
+                    environment.returnRoom(number).doorDescription();
+                    System.out.println("Which door do you take? (-1: stay here)");
+                    choice = input.nextInt();
+                    if (player.getStatus() == Player.POISONED) {
+                        player.poisonDamage();
                     }
-			        number = player.enterDoor( environment.returnRoom(number).returnDoor(choice) );
-
-					break;
+                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
+                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
+                    }
+                    number = player.enterDoor(environment.returnRoom(number).returnDoor(choice));
+                    break;
                 case 2:
                     player.checkInventory(input);
+                    break;
                 case 3:
                     player.checkStats();
+                    break;
+                case 4:
+                    environment.returnRoom(number).NPCDescription();
+                    System.out.println("Who will you face? (-1: stay here)");
+                    choice = input.nextInt();
+                    environment.returnRoom(number).NPCList.get(choice).interact(player);
+                    if(environment.returnRoom(number).NPCList.get(choice) instanceof Enemy){
+                        int health = ((Enemy) environment.returnRoom(number).NPCList.get(choice)).getHealth();
+                        if(health <= 0){
+                            System.out.println("Nigga be dead now.");
+                            environment.returnRoom(number).NPCList.remove(choice);
+                        }
+                    }
+                    break;
 			}
 		}
 

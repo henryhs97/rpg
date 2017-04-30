@@ -1,4 +1,3 @@
-
 public abstract class Item extends Inspectable implements Interactable{
 
     protected int uses;

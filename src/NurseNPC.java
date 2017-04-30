@@ -1,17 +1,12 @@
-import java.util.Random;
-
 public class NurseNPC extends NPC{
 	
     public NurseNPC() {
-    	super(chooseTypeOfNurse() );	
+    	super("A nurse");	
     }
 	
-	private static String chooseTypeOfNurse() {
+	private String nurseDialogue(int typeOfResponse) {
 		String s = null;
-		Random ran = new Random();
-		int choice = ran.nextInt(4) + 1;
-		
-		switch(choice) {
+		switch(typeOfResponse) {
 		case 1:
 			s= "I can't do anymore for you without plastic surgery.";
 			break;
@@ -26,7 +21,21 @@ public class NurseNPC extends NPC{
 		}
 		return s;
 	}
-
-
-
+	
+    public void interact(Player player) {
+    	if(player.getHealth()==100) {
+    		System.out.println(this.nurseDialogue(1));
+    	}
+    	else if(player.getHealth()>70) {
+    		System.out.println(this.nurseDialogue(2));
+    	}
+    	else if(player.getHealth()>40) {
+    		System.out.println(this.nurseDialogue(3));
+    	}
+    	else if(player.getHealth()>0) {
+    		System.out.println(this.nurseDialogue(4));
+    	}
+    	player.healPlayer();
+    }
+    	  
 }

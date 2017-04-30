@@ -7,14 +7,16 @@ public class Player implements CanFight{
     private int health;
     private int status;
     private int damage;
+    private int gold;
     private int itemChoice;
     private Weapon equippedWeapon = null;
 
     List<Item> inventory = new ArrayList<>();
 
-    public Player(int setHealth, int setDamage){
+    public Player(int setHealth, int setDamage, int setGold){
         this.health = setHealth;
         this.damage = setDamage;
+        this.gold = setGold;
         this.status = HEALTHY;
         this.itemChoice = -1;
     }
@@ -47,11 +49,17 @@ public class Player implements CanFight{
         }
 
     }
+	
+	public void addItemToPlayerInventory(Item item) {
+		this.inventory.add(item);
+		System.out.println(item.description + " has been put in your inventory.");
+	}
 
     public void checkStats(){
 	    System.out.println("Health: " + health);
 	    System.out.println("Status: " + status);
-	    System.out.println("Damage: " + damage);
+	    System.out.println("Gold: " + gold);
+	    System.out.println("Attack points: " + damage);
 	    if(equippedWeapon != null) {
             System.out.println("Weapon: " + equippedWeapon.inspect());
             System.out.println("Number of uses left: " + equippedWeapon.checkCondition());
@@ -59,8 +67,21 @@ public class Player implements CanFight{
 	        System.out.println("No weapon");
         }
     }
+    
     public int getHealth(){
 	    return health;
+    }
+    
+    public int getGold(){
+	    return gold;
+    }
+    
+    public void removeGold(int howMuch) {
+    		this.gold -= howMuch;
+    }
+
+    public int getDamage(){
+        return damage;
     }
 
     public int getStatus(){
@@ -70,9 +91,16 @@ public class Player implements CanFight{
     public void poisonDamage(){
 	    this.health -= 5;
     }
+    
+    public void healPlayer(){
+	    this.health = 100;
+    }
 
     public void receiveDamage(int atk){
         this.health -= atk;
+        if(this.health < 0){
+            this.health = 0;
+        }
     }
 
     public int dealDamage(){

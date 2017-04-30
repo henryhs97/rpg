@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Consumable extends Item {
 
     public static final int HEAL = 0;
@@ -20,6 +22,19 @@ public class Consumable extends Item {
                 points = 5;
                 break;
         }
+    }
+    
+    public static Consumable createRandomConsumable() {
+    	Random ran = new Random();
+		int random = ran.nextInt(4);
+		switch(random) {
+		case 0: return new Consumable("Health potion",1);
+		case 1: return new Consumable("Cough syrup",1);
+		case 2: return new Consumable("Energy drink",1);
+		case 3: return new Consumable("Orange juice",1);
+		case 4: return new Consumable("Protein bar",1);
+		default: return new Consumable("Spoiled chips",1);
+		}
     }
 
     public void interact(Player player){
