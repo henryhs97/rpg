@@ -69,7 +69,12 @@ public class Player implements CanFight{
     public void checkStats(){
     	System.out.println("Your stats:");
 	    System.out.println("Health: " + health);
-	    System.out.println("Status: " + status);
+	    System.out.print("Status: ");
+	    if(this.status==0) {
+	    	System.out.println("Healthy");
+	    } else if (this.status==1){
+	    	System.out.println("Poisoned");
+	    }
 	    System.out.println("Gold: " + gold);
 	    System.out.println("Attack points: " + damage);
 	    if(equippedWeapon != null) {
