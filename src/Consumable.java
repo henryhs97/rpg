@@ -1,3 +1,10 @@
+/* Consumable class implements three alternative types: Heal (completely cure),
+ * cure (increase health by points), make_swolle (increase player damage).
+ * A consumable its effect and the points corresponding to its effect.
+ * A createRandomConsumable method is made and returns a random consumable from a list
+ * Interact is also implemented which lets the player experience the effect of the consumable
+ */
+
 import java.util.Random;
 
 public class Consumable extends Item {
@@ -9,17 +16,17 @@ public class Consumable extends Item {
     int effect;
     int points;
 
-    public Consumable (String description, int setEffect, int setCost){
+    public Consumable (String description, int setEffect, int setCost) {
         super(description, 1, setCost);
         this.effect = setEffect;
-        switch(effect){
+        switch(effect) {
             case 0:
-                this.points = -20;
+                this.points = 20;
                 break;
             case 1:
                 break;
             case 2:
-                points = 5;
+                points = 10;
                 break;
         }
     }
@@ -37,17 +44,21 @@ public class Consumable extends Item {
 		}
     }
 
-    public void interact(Player player){
+    public void interact(Player player) {
         switch(effect){
             case 0:
-                player.receiveDamage(points);
+            	player.healPlayer();
+            	System.out.println("You are now healed.");
                 break;
-            case 1:
-                player.changeStatus(player.HEALTHY);
+            case 1:       	
+                player.curePlayer(points);
+                System.out.println("Your health has been increased.");
                 break;
             case 2:
                 player.increaseDamage(points);
+                System.out.println("You notice your veins begin to pop out and are ready to punch a wall");
                 break;
         }
     }
+    
 }

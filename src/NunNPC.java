@@ -1,3 +1,8 @@
+/* The nun NPC provides a way for the user to be healed without gold.
+ * A nun has a dialogue which corresponds to the amount of health points 
+ * the player has left.
+ */
+
 public class NunNPC extends NPC{
 	
     public NunNPC() {

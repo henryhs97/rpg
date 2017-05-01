@@ -1,4 +1,9 @@
+/* The main function creates the main dialogue with the user, each providing the
+ * player with 5 options. The game ends when (if) the player dies.
+ */
+
 import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -8,8 +13,9 @@ public class Main {
 		Player player= new Player(100,5, 5);
 
         int number=0;
-		while(true) { //game ends in the last room
-			if(player.getHealth() <= 0){
+        
+		while(true) {
+			if(player.getHealth() <= 0) {
 				System.out.println("You died.. GG");
 				break;
 			}
@@ -19,9 +25,9 @@ public class Main {
 			System.out.println("  (2) Check your inventory");
 			System.out.println("  (3) Check your stats");
 			System.out.println("  (4) Look for people");
-			int choice = input.nextInt();
-			System.out.print("You see: ");
 			
+			int choice = input.nextInt();
+			System.out.print("You see: ");			
 			switch(choice) {
                 case 0:
                     environment.returnRoom(number).roomDescription();
@@ -62,7 +68,5 @@ public class Main {
 	                    break;
 			}
 		}
-
 	}
-
 }

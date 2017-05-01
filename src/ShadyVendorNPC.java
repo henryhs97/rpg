@@ -1,3 +1,8 @@
+/* A shady vendor is an NPC who is able to interact with the player.
+ * The interaction is implemented by printing the vendor's inventory
+ * and giving the player the ability to purchase these objects. 
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -49,8 +54,4 @@ public class ShadyVendorNPC extends NPC {
 			 System.out.println("  (" + i + ") " + this.inventory.get(i).description + "\t (gold: " + this.inventory.get(i).cost + ")");
 		}
 	}
-
-
-
-
 }

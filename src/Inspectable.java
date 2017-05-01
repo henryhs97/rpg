@@ -1,12 +1,16 @@
+/* The abstract class Inspectable is used for objects to inherit the
+ * following properties and methods.
+ */
+
 public abstract class Inspectable {   //every inspectable object has a color accessed through .color
 
     protected String description;
 
-    public Inspectable (String s){
+    public Inspectable (String s) {
         this.description = s;
     }
 
-    public String inspect (){
+    public String inspect () {
         return this.description;
     }
 }

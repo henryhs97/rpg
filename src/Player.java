@@ -1,3 +1,10 @@
+/* The player class implements CanFight, and has several traits such as
+ * health points, status (healthy, poisoned), damage points, and gold.
+ * A player may also equip a weapon and has an inventory implemented as a list.
+ * This class involves methods that allow the player to check inventory, add
+ * items to the inventory, check stats, and a bunch of helper functions.
+ */
+
 import java.util.*;
 
 public class Player implements CanFight{
@@ -22,6 +29,7 @@ public class Player implements CanFight{
     }
 
 	public int enterDoor(Door door) {
+		System.out.println("You enter the room.");
 		return door.nextRoom;
 	}
 	
@@ -31,7 +39,10 @@ public class Player implements CanFight{
             System.out.println("  (" + i + ") " + inventory.get(i).inspect());
         }
         this.itemChoice = input.nextInt();
-	    if(inventory.get(itemChoice) instanceof Weapon) {
+        if(itemChoice == -1){
+        	return;
+        }
+        if(inventory.get(itemChoice) instanceof Weapon) {
             if (this.itemChoice != -1) {
                 if (equippedWeapon == null) {
                     inventory.get(this.itemChoice).interact(this);
@@ -102,8 +113,17 @@ public class Player implements CanFight{
 	    this.health -= 5;
     }
     
+    public void curePlayer(int points) {
+    	this.health += points;
+    	if(this.health>100) {
+    		this.health=100;
+        	this.changeStatus(HEALTHY);
+    	}
+    }
+    
     public void healPlayer(){
 	    this.health = 100;
+	    this.changeStatus(HEALTHY);
     }
 
     public void receiveDamage(int atk){

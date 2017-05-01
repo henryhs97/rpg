@@ -1,10 +1,14 @@
+/* Implementation of beggar NPC. Constructor to describe beggar, method for his dialogue,
+ * and interaction implementation.
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class BegarNPC extends NPC{
+public class BeggarNPC extends NPC {
 	
-    public BegarNPC() {
-    	super("poor begar sleeping on a cartboard");	
+    public BeggarNPC() {
+    	super("poor beggar sleeping on a cartboard");	
     }
 
 	private String begarDialogue() {

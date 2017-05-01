@@ -1,4 +1,3 @@
-
 class Riddle {
 
     String firstQuestion = "What is the answer to life, existence and everything?";

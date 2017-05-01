@@ -1,10 +1,9 @@
+/* Color is a class which simply generates a random color. 
+ * */
+
 import java.util.Random;
 
 public class Color {
-
-    
-
-	
 	public static String returnRandomColor() {
 		Random ran = new Random();
 		int whichColor = ran.nextInt(7) + 1;
