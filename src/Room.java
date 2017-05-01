@@ -18,7 +18,7 @@ public class Room extends Inspectable{
     }
 
     public void addEnemyToRoom(String description, int health, int damage){
-        this.NPCList.add(new Enemy(description, health, damage));
+        this.NPCList.add(new EnemyNPC(description, health, damage));
     }
     
     public void addVendorToRoom(){
@@ -26,7 +26,7 @@ public class Room extends Inspectable{
     }
     
     public void addNurseToRoom(){
-        this.NPCList.add(new NurseNPC());
+        this.NPCList.add(new NunNPC());
     }
     
     public void addBegarToRoom(){

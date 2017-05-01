@@ -29,13 +29,13 @@ public class BegarNPC extends NPC{
 	@Override
 	public void interact(Player player) {
 		System.out.println("Begar: Could you spare a few coins for a poor blind man?");
-    	System.out.println("How much gold to donate?:");
+    	System.out.println("  How much gold to donate?:");
     	Scanner input = new Scanner(System.in);
         int howMuch = input.nextInt();
-        if(player.getGold()<howMuch) {
-        	System.out.println("You can't give me more than you have.");
+        if(player.removeGold(howMuch)) {
+        	System.out.println(this.begarDialogue());
         } else{
-        	player.removeGold(howMuch);	
+        	System.out.println("  You can't give money you don't have!");	
         }
 	}
 

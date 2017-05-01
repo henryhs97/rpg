@@ -1,14 +1,14 @@
-public class NurseNPC extends NPC{
+public class NunNPC extends NPC{
 	
-    public NurseNPC() {
-    	super("nurse");	
+    public NunNPC() {
+    	super("nun");	
     }
 	
-	private String nurseDialogue(int typeOfResponse) {
+	private String nunDialogue(int typeOfResponse) {
 		String s = null;
 		switch(typeOfResponse) {
 		case 1:
-			s= "I can't do anymore for you without plastic surgery.";
+			s= "You seem just fine. Why bother asking god for more?";
 			break;
 		case 2:
 			s= "Here sweety, have a band aid.";
@@ -24,16 +24,16 @@ public class NurseNPC extends NPC{
 	
     public void interact(Player player) {
     	if(player.getHealth()==100) {
-    		System.out.println(this.nurseDialogue(1));
+    		System.out.println(this.nunDialogue(1));
     	}
     	else if(player.getHealth()>70) {
-    		System.out.println(this.nurseDialogue(2));
+    		System.out.println(this.nunDialogue(2));
     	}
     	else if(player.getHealth()>40) {
-    		System.out.println(this.nurseDialogue(3));
+    		System.out.println(this.nunDialogue(3));
     	}
     	else if(player.getHealth()>0) {
-    		System.out.println(this.nurseDialogue(4));
+    		System.out.println(this.nunDialogue(4));
     	}
     	player.healPlayer();
     }

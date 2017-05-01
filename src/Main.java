@@ -52,10 +52,9 @@ public class Main {
                     choice = input.nextInt();
                     if(choice!=-1) {
 	                    environment.returnRoom(number).NPCList.get(choice).interact(player);
-	                    if(environment.returnRoom(number).NPCList.get(choice) instanceof Enemy){
-	                        int health = ((Enemy) environment.returnRoom(number).NPCList.get(choice)).getHealth();
+	                    if(environment.returnRoom(number).NPCList.get(choice) instanceof EnemyNPC){
+	                        int health = ((EnemyNPC) environment.returnRoom(number).NPCList.get(choice)).getHealth();
 	                        if(health <= 0){
-	                            System.out.println("Nigga be dead now.");
 	                            environment.returnRoom(number).NPCList.remove(choice);
 	                        }
 	                    }

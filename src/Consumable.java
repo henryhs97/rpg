@@ -9,8 +9,8 @@ public class Consumable extends Item {
     int effect;
     int points;
 
-    public Consumable (String description, int setEffect){
-        super(description, 1);
+    public Consumable (String description, int setEffect, int setCost){
+        super(description, 1, setCost);
         this.effect = setEffect;
         switch(effect){
             case 0:
@@ -28,12 +28,12 @@ public class Consumable extends Item {
     	Random ran = new Random();
 		int random = ran.nextInt(4);
 		switch(random) {
-		case 0: return new Consumable("Steroids", Consumable.MAKE_SWOLLE);
-		case 1: return new Consumable("Healing potion", Consumable.HEAL);
-		case 2: return new Consumable("Cure", Consumable.CURE);
-		case 3: return new Consumable("Orange juice", Consumable.CURE);
-		case 4: return new Consumable("Protein bar", Consumable.CURE);
-		default: return new Consumable("Spoiled chips", Consumable.CURE);
+		case 0: return new Consumable("Steroids", Consumable.MAKE_SWOLLE, 4);
+		case 1: return new Consumable("Healing potion", Consumable.HEAL, 1);
+		case 2: return new Consumable("Multivitamin", Consumable.CURE, 2);
+		case 3: return new Consumable("Orange juice", Consumable.CURE, 1);
+		case 4: return new Consumable("Protein bar", Consumable.CURE, 1);
+		default: return new Consumable("Spoiled chips", Consumable.CURE, 1);
 		}
     }
 

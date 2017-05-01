@@ -36,12 +36,17 @@ public class ShadyVendorNPC extends NPC {
     	Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
         player.addItemToPlayerInventory(this.inventory.get(choice));
-        this.inventory.remove(choice);    
+        
+        if( player.removeGold(this.inventory.get(choice).cost) ) {
+        	this.inventory.remove(choice); 
+        } else {
+        	System.out.println("  Vendor: Not enough money? No can do..");
+        }
     }
 
 	private void showShopItems() {	
 		for(int i=0; i<inventory.size(); i++) {
-			 System.out.println("  (" + i + ") " + this.inventory.get(i).description);
+			 System.out.println("  (" + i + ") " + this.inventory.get(i).description + "\t (gold: " + this.inventory.get(i).cost + ")");
 		}
 	}
 

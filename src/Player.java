@@ -56,6 +56,7 @@ public class Player implements CanFight{
 	}
 
     public void checkStats(){
+    	System.out.println("Your stats:");
 	    System.out.println("Health: " + health);
 	    System.out.println("Status: " + status);
 	    System.out.println("Gold: " + gold);
@@ -76,8 +77,17 @@ public class Player implements CanFight{
 	    return gold;
     }
     
-    public void removeGold(int howMuch) {
+    public void addGold(int howMuch) {
+    		this.gold += howMuch;
+    }
+    
+    public boolean removeGold(int howMuch) {
+    	if(this.gold>=howMuch) {
     		this.gold -= howMuch;
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
 
     public int getDamage(){

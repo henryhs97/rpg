@@ -4,14 +4,14 @@ public class Weapon extends Item{
 
     private int damage;
 
-    public Weapon(String description, int setDamage, int setUses){
-        super(description, setUses);
+    public Weapon(String description, int setDamage, int setUses, int setCost){
+        super(description, setUses, setCost);
         this.damage = setDamage;
     }
 
     @Override
     public void interact(Player player) {
-        System.out.println("Equiped: " + inspect());
+        System.out.println("Equipped: " + inspect());
         player.equipWeapon(this);
     }
     
@@ -19,12 +19,12 @@ public class Weapon extends Item{
     	Random ran = new Random();
 		int random = ran.nextInt(4);
 		switch(random) {
-		case 0: return new Weapon("Rusty pickaxe", 10, 5);
-		case 1: return new Weapon("Rusty hammer", 15, 5);
-		case 2: return new Weapon("Swiss army knife", 5, 10);
-		case 3: return new Weapon("Shovel", 8, 15);
-		case 4: return new Weapon("Butcher's knife", 40, 2);
-		default: return new Weapon("Toothpick", 1,1);
+		case 0: return new Weapon("Rusty pickaxe", 10, 5, 2);
+		case 1: return new Weapon("Rusty hammer", 25, 5, 5);
+		case 2: return new Weapon("Swiss army knife", 5, 10, 3);
+		case 3: return new Weapon("Shovel", 8, 15, 3);
+		case 4: return new Weapon("Butcher's knife", 40, 2, 4);
+		default: return new Weapon("Toothpick", 1,1, 1);
 		}
     }
 
