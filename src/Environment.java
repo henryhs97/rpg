@@ -7,7 +7,7 @@ public class Environment{
 		rooms[0]=new Room(Color.returnRandomColor(), 2);  //a random 
 		rooms[0].addDoorToRoom( Color.returnRandomColor(), 1, 0);
 		rooms[0].addDoorToRoom( Color.returnRandomColor(), 3, 0);
-		rooms[0].addEnemyToRoom("A shady man",40, 15);
+		rooms[0].addEnemyToRoom("shady man",40, 15);
 		rooms[0].addVendorToRoom();
 		rooms[0].addNurseToRoom();
 		rooms[0].addBegarToRoom();

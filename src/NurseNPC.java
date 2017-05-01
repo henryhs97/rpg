@@ -1,7 +1,7 @@
 public class NurseNPC extends NPC{
 	
     public NurseNPC() {
-    	super("A nurse");	
+    	super("nurse");	
     }
 	
 	private String nurseDialogue(int typeOfResponse) {

@@ -61,7 +61,7 @@ public class Room extends Inspectable{
     public void NPCDescription() {
         System.out.println("You look around for people. You see:");
         for(int i = 0; i < NPCList.size(); i++){
-            System.out.println("  (" + i + ")" + NPCList.get(i).inspect());
+            System.out.println("  (" + i + ") A " + NPCList.get(i).inspect());
         }
     }
 	

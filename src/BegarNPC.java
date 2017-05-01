@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class BegarNPC extends NPC{
 	
     public BegarNPC() {
-    	super("A poor begar sleeping on a cartboard");	
+    	super("poor begar sleeping on a cartboard");	
     }
 
 	private String begarDialogue() {
@@ -14,13 +14,13 @@ public class BegarNPC extends NPC{
 		
 		switch(choice) {
 		case 1:
-			s= "Thank you! Divines bless your heart";
+			s= "Begar: Thank you! Divines bless your heart";
 			break;
 		case 2:
-			s= "All you give me is this? Fine, I'll take it.";
+			s= "Begar: All you give me is this? Fine, I'll take it.";
 			break;
 		case 3:
-			s= "I will not forget this.";
+			s= "Begar: I will not forget this.";
 			break;
 		}
 		return s;
@@ -28,6 +28,7 @@ public class BegarNPC extends NPC{
 
 	@Override
 	public void interact(Player player) {
+		System.out.println("Begar: Could you spare a few coins for a poor blind man?");
     	System.out.println("How much gold to donate?:");
     	Scanner input = new Scanner(System.in);
         int howMuch = input.nextInt();

@@ -6,12 +6,6 @@ public class Main {
 		
 		Environment environment= new Environment();  //makes environment
 		Player player= new Player(100,5, 5);
-        player.inventory.add(new Weapon("Rusty hammer", 15, 10));
-        player.inventory.add(new Weapon("Rusty pickaxe", 10, 10));
-        player.inventory.add(new Consumable("Cure", Consumable.CURE));
-        player.inventory.add(new Consumable("Healing potion", Consumable.HEAL));
-        player.inventory.add(new Consumable("Steroids", Consumable.MAKE_SWOLLE));
-
 
         int number=0;
 		while(true) { //game ends in the last room
@@ -36,14 +30,16 @@ public class Main {
                     environment.returnRoom(number).doorDescription();
                     System.out.println("Which door do you take? (-1: stay here)");
                     choice = input.nextInt();
-                    if (player.getStatus() == Player.POISONED) {
-                        player.poisonDamage();
+                    if(choice!=-1) {
+	                    if (player.getStatus() == Player.POISONED) {
+	                        player.poisonDamage();
+	                    }
+	                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
+	                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
+	                    }
+	                    number = player.enterDoor(environment.returnRoom(number).returnDoor(choice));
                     }
-                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
-                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
-                    }
-                    number = player.enterDoor(environment.returnRoom(number).returnDoor(choice));
-                    break;
+	                    break;
                 case 2:
                     player.checkInventory(input);
                     break;
@@ -52,17 +48,19 @@ public class Main {
                     break;
                 case 4:
                     environment.returnRoom(number).NPCDescription();
-                    System.out.println("Who will you face? (-1: stay here)");
+                    System.out.println("Who do you talk to? (-1: do nothing)");
                     choice = input.nextInt();
-                    environment.returnRoom(number).NPCList.get(choice).interact(player);
-                    if(environment.returnRoom(number).NPCList.get(choice) instanceof Enemy){
-                        int health = ((Enemy) environment.returnRoom(number).NPCList.get(choice)).getHealth();
-                        if(health <= 0){
-                            System.out.println("Nigga be dead now.");
-                            environment.returnRoom(number).NPCList.remove(choice);
-                        }
+                    if(choice!=-1) {
+	                    environment.returnRoom(number).NPCList.get(choice).interact(player);
+	                    if(environment.returnRoom(number).NPCList.get(choice) instanceof Enemy){
+	                        int health = ((Enemy) environment.returnRoom(number).NPCList.get(choice)).getHealth();
+	                        if(health <= 0){
+	                            System.out.println("Nigga be dead now.");
+	                            environment.returnRoom(number).NPCList.remove(choice);
+	                        }
+	                    }
                     }
-                    break;
+	                    break;
 			}
 		}
 

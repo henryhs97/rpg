@@ -28,12 +28,12 @@ public class Consumable extends Item {
     	Random ran = new Random();
 		int random = ran.nextInt(4);
 		switch(random) {
-		case 0: return new Consumable("Health potion",1);
-		case 1: return new Consumable("Cough syrup",1);
-		case 2: return new Consumable("Energy drink",1);
-		case 3: return new Consumable("Orange juice",1);
-		case 4: return new Consumable("Protein bar",1);
-		default: return new Consumable("Spoiled chips",1);
+		case 0: return new Consumable("Steroids", Consumable.MAKE_SWOLLE);
+		case 1: return new Consumable("Healing potion", Consumable.HEAL);
+		case 2: return new Consumable("Cure", Consumable.CURE);
+		case 3: return new Consumable("Orange juice", Consumable.CURE);
+		case 4: return new Consumable("Protein bar", Consumable.CURE);
+		default: return new Consumable("Spoiled chips", Consumable.CURE);
 		}
     }
 

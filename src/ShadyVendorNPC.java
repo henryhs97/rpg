@@ -4,9 +4,10 @@ import java.util.Scanner;
 public class ShadyVendorNPC extends NPC {
 	
     public ShadyVendorNPC() {   	
-    	super("A shady vendor");
-    	for(int i=0; i<4; i++) {
+    	super("shady vendor");
+    	for(int i=0; i<3; i++) {
     		this.inventory.add(Consumable.createRandomConsumable());
+    		this.inventory.add(Weapon.createRandomWeapon());
     	}
     }
 
@@ -17,13 +18,13 @@ public class ShadyVendorNPC extends NPC {
 		
 		switch(choice) {
 		case 1:
-			s= "I don't have all day. What do you want?";
+			s= "Vendor: I don't have all day. What do you want?";
 			break;
 		case 2:
-			s= "Business is tough nowadays. This is all I've got for sale.";
+			s= "Vendor: Business is tough nowadays. This is all I've got for sale.";
 			break;
 		case 3:
-			s= "Perhaps we can negotiate a deal, what do you want to buy?";
+			s= "Vendor: Perhaps we can negotiate a deal, what do you want to buy?";
 			break;
 		}
 		return s;
@@ -40,7 +41,7 @@ public class ShadyVendorNPC extends NPC {
 
 	private void showShopItems() {	
 		for(int i=0; i<inventory.size(); i++) {
-			 System.out.println("  (" + i + ") A " + this.inventory.get(i).description);
+			 System.out.println("  (" + i + ") " + this.inventory.get(i).description);
 		}
 	}
 
