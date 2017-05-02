@@ -5,6 +5,8 @@
  * items to the inventory, check stats, and a bunch of helper functions.
  */
 
+import introduction.Main;
+
 import java.util.*;
 
 public class Player implements CanFight{
@@ -38,10 +40,12 @@ public class Player implements CanFight{
 	    for(int i = 0; i < inventory.size(); i++) {
             System.out.println("  (" + i + ") " + inventory.get(i).inspect());
         }
-        this.itemChoice = input.nextInt();
-        if(itemChoice == -1){
+
+        this.itemChoice = Main.makeValidChoice(input, -1, this.inventory.size());
+
+        if(itemChoice == -1)
         	return;
-        }
+
         if(inventory.get(itemChoice) instanceof Weapon) {
             if (this.itemChoice != -1) {
                 if (equippedWeapon == null) {

@@ -4,12 +4,20 @@
  * 
  */
 
+import introduction.NPCs.EnemyNPC;
+import introduction.NPCs.NunNPC;
+import introduction.NPCs.ShadyVendorNPC;
+
 import java.util.*;
 
 public class Room extends Inspectable {
 
-    public List<Door> doorList = new ArrayList<Door>();
-    public List<NPC> NPCList = new ArrayList<NPC>();
+    public static final int NORMAL_DOOR = 0;
+    public static final int SPIKY_DOOR = 1;
+    public static final int RIDDLE_DOOR = 2;
+
+    public List<Door> doorList = new ArrayList<>();
+    public List<NPC> NPCList = new ArrayList<>();
 
     int numOfDoors;
 
@@ -18,8 +26,18 @@ public class Room extends Inspectable {
         this.numOfDoors=numberOfDoors;
     }
     
-    public void addDoorToRoom(String color, int next, int previous) {
-    	this.doorList.add( new Door(Color.returnRandomColor(), next, previous));
+    public void addDoorToRoom(String color, int next, int previous, int typeOfDoor) {
+        switch(typeOfDoor) {
+            case NORMAL_DOOR:
+                this.doorList.add(new Door(Color.returnRandomColor(), next, previous));
+                break;
+            case SPIKY_DOOR:
+                this.doorList.add(new DamageDoor(Color.returnRandomColor(), next, previous, 5));
+                break;
+            case RIDDLE_DOOR:
+                this.doorList.add(new RiddleDoor(Color.returnRandomColor(), next, previous));
+                break;
+        }
     }
 
     public void addEnemyToRoom() {

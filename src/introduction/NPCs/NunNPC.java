@@ -3,6 +3,8 @@
  * the player has left.
  */
 
+package introduction.NPCs;
+
 public class NunNPC extends NPC{
 	
     public NunNPC() {

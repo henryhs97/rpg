@@ -56,7 +56,7 @@ public class Consumable extends Item {
                 break;
             case 2:
                 player.increaseDamage(points);
-                System.out.println("You notice your veins begin to pop out and are ready to punch a wall");
+                System.out.println("You notice your veins begin to pop. You feel ready to punch a wall!");
                 break;
         }
     }

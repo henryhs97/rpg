@@ -2,6 +2,9 @@
  * player with 5 options. The game ends when (if) the player dies.
  */
 
+import introduction.NPCs.EnemyNPC;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,11 +12,12 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner input= new Scanner(System.in);
 		
-		Environment environment= new Environment();  //makes environment
-		Player player= new Player(100,5, 5);
+		Environment environment = new Environment();  //makes environment
+		Player player = new Player(100,5, 5);
 
-        int number=0;
-        
+		int number = 0;
+		int choice;
+
 		while(true) {
 			if(player.getHealth() <= 0) {
 				System.out.println("You died.. GG");
@@ -25,8 +29,9 @@ public class Main {
 			System.out.println("  (2) Check your inventory");
 			System.out.println("  (3) Check your stats");
 			System.out.println("  (4) Look for people");
-			
-			int choice = input.nextInt();
+
+			choice = makeValidChoice(input,-1, 5);
+
 			System.out.print("You see: ");			
 			switch(choice) {
                 case 0:
@@ -35,14 +40,26 @@ public class Main {
                 case 1:
                     environment.returnRoom(number).doorDescription();
                     System.out.println("Which door do you take? (-1: stay here)");
-                    choice = input.nextInt();
-                    if(choice!=-1) {
+
+                    choice = makeValidChoice(input,-1, environment.returnRoom(number).doorList.size());
+
+                    if(choice != -1) {
 	                    if (player.getStatus() == Player.POISONED) {
+	                    	System.out.println("The poison is slowly killing you..");
 	                        player.poisonDamage();
 	                    }
 	                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
 	                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
-	                    }
+	                    }else if(environment.returnRoom(number).returnDoor(choice) instanceof RiddleDoor){
+	                    	RiddleDoor tempDoorPointer = (RiddleDoor) environment.returnRoom(number).returnDoor(choice);
+	                    	if(!tempDoorPointer.isRiddleSolved()) {
+								tempDoorPointer.interact(player);
+								tempDoorPointer.weSolvedIt();
+							}
+							if(player.getHealth() <= 0) {
+								break;
+							}
+						}
 	                    number = player.enterDoor(environment.returnRoom(number).returnDoor(choice));
                     }
 	                    break;
@@ -55,7 +72,9 @@ public class Main {
                 case 4:
                     environment.returnRoom(number).NPCDescription();
                     System.out.println("Who do you talk to? (-1: do nothing)");
-                    choice = input.nextInt();
+
+					choice = makeValidChoice(input,-1, environment.returnRoom(number).NPCList.size());
+
                     if(choice!=-1) {
 	                    environment.returnRoom(number).NPCList.get(choice).interact(player);
 	                    if(environment.returnRoom(number).NPCList.get(choice) instanceof EnemyNPC){
@@ -65,8 +84,31 @@ public class Main {
 	                        }
 	                    }
                     }
-	                    break;
+					break;
 			}
 		}
+	}
+
+	public static void invalidChoice(int min, int choice, int size) throws InputMismatchException{
+		if(choice < min || choice >= size) {
+			throw new InputMismatchException("Please input a valid number: ");
+		}
+	}
+
+	public static int makeValidChoice(Scanner input, int min, int size){
+		int choice;
+		try{
+			if(input.hasNextInt()) {
+				choice = input.nextInt();
+				invalidChoice(min,choice,size);
+			}else{
+				input.nextLine();
+				throw new InputMismatchException();
+			}
+		}catch(InputMismatchException e){
+			System.out.println("Invalid input, returning to room menu.");
+			choice = -1;
+		}
+		return choice;
 	}
 }

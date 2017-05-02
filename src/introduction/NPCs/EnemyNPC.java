@@ -1,4 +1,4 @@
-/* The implementation of an enemy NPC implements the CanFight and Interactable
+package introduction.NPCs;/* The implementation of an enemy NPC implements the CanFight and Interactable
  * interfaces. Several helper methods are made in order to appropiately implement
  * the interact method. The player has the ability to attack the enemy while they 
  * both lose health points. Once an enemy is dead, the player gets 10 gold.
@@ -40,10 +40,16 @@ public class EnemyNPC extends NPC implements CanFight, Interactable {
     public void interact(Player player) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Stranger: Hasn't anyone taught not to talk to strangers? Now you must die!");
+        System.out.println("Stranger: Hasn't anyone taught not to talk to strangers?");
         System.out.println("  (0) Attack the enemy!");
         System.out.println("  (1) Ignore the enemy ");
-        int choice = input.nextInt();
+        int choice;
+
+        choice = Main.makeValidChoice(input, 0, 2);
+
+        if (choice == -1)
+            choice = 1;
+
 
         while(this.health > 0 && player.getHealth() > 0 && choice == 0) {
              player.receiveDamage(this.dealDamage());
@@ -57,7 +63,11 @@ public class EnemyNPC extends NPC implements CanFight, Interactable {
                 System.out.println("What will you do next?");
                 System.out.println("  (0) Keep fighting!");
                 System.out.println("  (1) Run away!");
-                choice = input.nextInt();
+
+                choice = Main.makeValidChoice(input,0, 2);
+                if (choice == -1)
+                     choice = 1;
+
              }
          } 
             

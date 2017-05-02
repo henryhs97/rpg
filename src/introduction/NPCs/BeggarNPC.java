@@ -2,6 +2,8 @@
  * and interaction implementation.
  */
 
+package introduction.NPCs;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,20 +13,20 @@ public class BeggarNPC extends NPC {
     	super("poor beggar sleeping on a cartboard");	
     }
 
-	private String begarDialogue() {
+	private String beggarDialogue() {
 		String s = null;
 		Random ran = new Random();
 		int choice = ran.nextInt(3) + 1;
 		
 		switch(choice) {
 		case 1:
-			s= "Begar: Thank you! Divines bless your heart";
+			s= "Beggar: Thank you! Divines bless your heart";
 			break;
 		case 2:
-			s= "Begar: All you give me is this? Fine, I'll take it.";
+			s= "Beggar: All you give me is this? Fine, I'll take it.";
 			break;
 		case 3:
-			s= "Begar: I will not forget this.";
+			s= "Beggar: I will not forget this.";
 			break;
 		}
 		return s;
@@ -32,17 +34,19 @@ public class BeggarNPC extends NPC {
 
 	@Override
 	public void interact(Player player) {
-		System.out.println("Begar: Could you spare a few coins for a poor blind man?");
+		System.out.println("Beggar: Could you spare a few coins for a poor blind man?");
     	System.out.println("  How much gold to donate?:");
     	Scanner input = new Scanner(System.in);
-        int howMuch = input.nextInt();
-        if(player.removeGold(howMuch)) {
-        	System.out.println(this.begarDialogue());
-        } else{
-        	System.out.println("  You can't give money you don't have!");	
-        }
+        int howMuch;
+
+		howMuch = Main.makeValidChoice(input,-1, Integer.MAX_VALUE);
+
+		if(howMuch > player.getGold()){
+			System.out.println("  You can't give money you don't have!");
+			return;
+		}
+        player.removeGold(howMuch);
+		System.out.println(this.beggarDialogue());
 	}
-
-
 
 }
