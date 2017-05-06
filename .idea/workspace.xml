@@ -2,6 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc7ce2d-06d2-4286-9f83-0904b1f99d0b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Color.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/DamageDoor.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/DamageDoor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/Door.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/Door.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/RiddleDoor.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/RiddleDoor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Environment.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Environment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Room.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Room.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Inspectable.class" afterPath="$PROJECT_DIR$/bin/introduction/Inspectable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/CanFight.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/CanFight.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/Interactable.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/Interactable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/Shop.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/Shop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Main.class" afterPath="$PROJECT_DIR$/bin/introduction/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/BeggarNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/BeggarNPC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/EnemyNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/EnemyNPC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/NPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/NPC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/NunNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/NunNPC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/ShadyVendorNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/ShadyVendorNPC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Consumable.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Consumable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Item.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Item.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Player.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Weapon.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Weapon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Environment.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Environment.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -117,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Environment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -918,11 +938,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22800000" />
+    <option name="totallyTimeSpent" value="22914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="29" width="1400" height="780" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -939,7 +958,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1249,7 +1268,7 @@
     <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
