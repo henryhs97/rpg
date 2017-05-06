@@ -50,10 +50,10 @@ public class Main {
 	                    	System.out.println("The poison is slowly killing you..");
 	                        player.poisonDamage();
 	                    }
-	                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
+	                    if (environment.returnRoom(number).returnDoor(choice).returnType() == TypeOfDoor.SPIKY) {
 	                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
 	                        player.changeStatus(Status.POISONED);
-	                    }else if(environment.returnRoom(number).returnDoor(choice) instanceof RiddleDoor){
+	                    }else if(environment.returnRoom(number).returnDoor(choice).returnType() == TypeOfDoor.RIDDLE){
 	                    	RiddleDoor tempDoorPointer = (RiddleDoor) environment.returnRoom(number).returnDoor(choice);
 	                    	if(!tempDoorPointer.isRiddleSolved()) {
 								tempDoorPointer.interact(player);
