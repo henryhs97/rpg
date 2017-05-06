@@ -1,9 +1,14 @@
-package introduction.NPCs;/* The implementation of an enemy NPC implements the CanFight and Interactable
+package introduction.NPCs;/* The implementation of an enemy NPC implements the introduction.Interfaces.CanFight and introduction.Interfaces.Interactable
  * interfaces. Several helper methods are made in order to appropiately implement
  * the interact method. The player has the ability to attack the enemy while they 
  * both lose health points. Once an enemy is dead, the player gets 10 gold.
  * The createRandomEnemy method simply returns a random enemy from a list.
  */
+
+import introduction.Interfaces.CanFight;
+import introduction.Interfaces.Interactable;
+import introduction.Main;
+import introduction.Player.Player;
 
 import java.util.Random;
 import java.util.Scanner;

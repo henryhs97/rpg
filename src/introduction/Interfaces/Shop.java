@@ -1,4 +1,6 @@
-public interface Shop {
+package introduction.Interfaces;
+
+public interface 	Shop {
 
 	public void showShopItems();
 

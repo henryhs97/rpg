@@ -1,3 +1,5 @@
+package introduction.Environment.Doors;
+
 public class DamageDoor extends Door {
 
     int damage;
@@ -8,7 +10,9 @@ public class DamageDoor extends Door {
     }
 
     public int doorDamage() {
-        System.out.println(" The spikes tear your skin as you go through the door.");
+        System.out.println("The spikes tear your skin as you go through the door.");
+        System.out.println("You start feeling ill..");
+
         return damage;
     }
 }

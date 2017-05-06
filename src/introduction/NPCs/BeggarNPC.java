@@ -3,14 +3,17 @@
  */
 
 package introduction.NPCs;
-import java.util.InputMismatchException;
+import introduction.Main;
+import introduction.NPCs.NPC;
+import introduction.Player.Player;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class BeggarNPC extends NPC {
 	
     public BeggarNPC() {
-    	super("poor beggar sleeping on a cartboard");	
+    	super("poor beggar sleeping on a cardboard");
     }
 
 	private String beggarDialogue() {

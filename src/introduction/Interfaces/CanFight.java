@@ -1,4 +1,4 @@
-/* CanFight interface */
+package introduction.Interfaces;/* introduction.Interfaces.CanFight interface */
 
 public interface CanFight {
 

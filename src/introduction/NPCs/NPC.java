@@ -4,7 +4,11 @@
 package introduction.NPCs;
 
 
-public abstract class NPC extends Inspectable implements Interactable{
+import introduction.Inspectable;
+import introduction.Interfaces.Interactable;
+import introduction.Player.Player;
+
+public abstract class NPC extends Inspectable implements Interactable {
 	
     public NPC(String description) {
         super(description);

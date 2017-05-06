@@ -1,7 +1,8 @@
-/* Color is a class which simply generates a random color. 
+package introduction.Environment;/* introduction.Environment.Color is a class which simply generates a random color.
  * */
 
 import java.util.Random;
+
 
 public class Color {
 	public static String returnRandomColor() {

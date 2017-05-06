@@ -3,6 +3,13 @@
  * and giving the player the ability to purchase these objects. 
  */
 package introduction.NPCs;
+
+import introduction.Main;
+import introduction.Player.Consumable;
+import introduction.Player.Item;
+import introduction.Player.Weapon;
+import introduction.Player.Player;
+
 import java.util.*;
 
 public class ShadyVendorNPC extends NPC {
@@ -49,7 +56,7 @@ public class ShadyVendorNPC extends NPC {
         if( choice == -1)
         	return;
 
-		if( player.removeGold(this.inventory.get(choice).cost) ) {
+		if( player.removeGold(this.inventory.get(choice).returnCost()) ) {
 			player.addItemToPlayerInventory(this.inventory.get(choice));
         	this.inventory.remove(choice);
         	System.out.println("  Vendor: Pleasure doing business with you.");
@@ -60,13 +67,7 @@ public class ShadyVendorNPC extends NPC {
 
 	private void showShopItems() {	
 		for(int i=0; i<inventory.size(); i++) {
-			 System.out.println("  (" + i + ") " + this.inventory.get(i).description + "\t (gold: " + this.inventory.get(i).cost + ")");
-		}
-	}
-
-	private static void invalidVendorChoice(int choice, int size) throws IllegalArgumentException{
-		if(choice < -1 || choice >= size){
-			throw new IllegalArgumentException("Invalid choice, exitting vendor.");
+			 System.out.println("  (" + i + ") " + this.inventory.get(i).inspect() + "\t (gold: " + this.inventory.get(i).returnCost() + ")");
 		}
 	}
 }

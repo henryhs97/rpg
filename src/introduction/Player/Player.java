@@ -1,15 +1,18 @@
-/* The player class implements CanFight, and has several traits such as
+/* The player class implements introduction.Interfaces.CanFight, and has several traits such as
  * health points, status (healthy, poisoned), damage points, and gold.
  * A player may also equip a weapon and has an inventory implemented as a list.
  * This class involves methods that allow the player to check inventory, add
  * items to the inventory, check stats, and a bunch of helper functions.
  */
+package introduction.Player;
 
+import introduction.Environment.Doors.Door;
+import introduction.Interfaces.CanFight;
 import introduction.Main;
 
 import java.util.*;
 
-public class Player implements CanFight{
+public class Player implements CanFight {
 
     public static final int HEALTHY = 0;
     public static final int POISONED = 1;
@@ -32,7 +35,7 @@ public class Player implements CanFight{
 
 	public int enterDoor(Door door) {
 		System.out.println("You enter the room.");
-		return door.nextRoom;
+		return door.returnNextRoom();
 	}
 	
 	public void checkInventory(Scanner input){
@@ -67,7 +70,7 @@ public class Player implements CanFight{
 	
 	public void addItemToPlayerInventory(Item item) {
 		this.inventory.add(item);
-		System.out.println(item.description + " has been put in your inventory.");
+		System.out.println(item.inspect() + " has been put in your inventory.");
 	}
 
     public void checkStats(){
@@ -82,7 +85,7 @@ public class Player implements CanFight{
 	    System.out.println("Gold: " + gold);
 	    System.out.println("Attack points: " + damage);
 	    if(equippedWeapon != null) {
-            System.out.println("Weapon: " + equippedWeapon.inspect());
+            System.out.println("introduction.Player.Weapon: " + equippedWeapon.inspect());
             System.out.println("Number of uses left: " + equippedWeapon.checkCondition());
         }else{
 	        System.out.println("No weapon");
@@ -151,8 +154,8 @@ public class Player implements CanFight{
         return this.damage;
     }
 
-    public void equipWeapon(Weapon choosenWeapon){
-        this.equippedWeapon = choosenWeapon;
+    public void equipWeapon(Weapon chosenWeapon){
+        this.equippedWeapon = chosenWeapon;
         increaseDamage(equippedWeapon.getDamage());
     }
 

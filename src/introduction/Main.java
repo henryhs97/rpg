@@ -1,11 +1,15 @@
-/* The main function creates the main dialogue with the user, each providing the
+package introduction;/* The main function creates the main dialogue with the user, each providing the
  * player with 5 options. The game ends when (if) the player dies.
  */
 
+import introduction.Environment.*;
+import introduction.Environment.Doors.*;
 import introduction.NPCs.EnemyNPC;
+import introduction.Player.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 public class Main {
 
@@ -50,6 +54,7 @@ public class Main {
 	                    }
 	                    if (environment.returnRoom(number).returnDoor(choice) instanceof DamageDoor) {
 	                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
+	                        player.changeStatus(Player.POISONED);
 	                    }else if(environment.returnRoom(number).returnDoor(choice) instanceof RiddleDoor){
 	                    	RiddleDoor tempDoorPointer = (RiddleDoor) environment.returnRoom(number).returnDoor(choice);
 	                    	if(!tempDoorPointer.isRiddleSolved()) {

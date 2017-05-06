@@ -1,4 +1,4 @@
-/* The abstract class Inspectable is used for objects to inherit the
+package introduction;/* The abstract class introduction.Inspectable is used for objects to inherit the
  * following properties and methods.
  */
 

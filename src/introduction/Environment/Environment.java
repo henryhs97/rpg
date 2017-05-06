@@ -2,6 +2,9 @@
  * composed of 6 rooms, each of which contain NPCs. 
  * A method returnRoom was also implemented that simply returns a desired room.
  */
+package introduction.Environment;
+
+import introduction.Inspectable;
 
 public class Environment{
 	int numberOfRooms = 6;

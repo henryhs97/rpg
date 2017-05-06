@@ -1,4 +1,4 @@
-/* A weapon is an item which interacts with the player by equipping it.
+package introduction.Player;/* A weapon is an item which interacts with the player by equipping it.
  * A method is also added in order to simply create a random weapon with random
  * variables. As a weapon is an item, there are limited number of uses, and each time
  * a weapon is used, its lifespan decreases. 
@@ -6,7 +6,7 @@
 
 import java.util.Random;
 
-public class Weapon extends Item{
+public class Weapon extends Item {
 
     private int damage;
 

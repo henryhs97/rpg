@@ -5,7 +5,10 @@
 
 package introduction.NPCs;
 
-public class NunNPC extends NPC{
+import introduction.NPCs.NPC;
+import introduction.Player.Player;
+
+public class NunNPC extends NPC {
 	
     public NunNPC() {
     	super("nun");	

@@ -1,6 +1,12 @@
+package introduction.Environment.Doors;
+
+import introduction.Interfaces.Interactable;
+import introduction.Player.Player;
+
 import java.util.Scanner;
 
-public class RiddleDoor extends Door implements Interactable{
+
+public class RiddleDoor extends Door implements Interactable {
 
 
     private boolean isSolved;
@@ -13,7 +19,7 @@ public class RiddleDoor extends Door implements Interactable{
     public void interact(Player player){
         Scanner input = new Scanner(System.in);
         System.out.println("You see an old bearded man in front of the door.");
-        System.out.println("Old man: Stop! Who approaches the Door of Death must answer me these questions three!");
+        System.out.println("Old man: Stop! Who approaches the introduction.Environment.Doors.Door of Death must answer me these questions three!");
         System.out.println("There on the other side, he see..");
         System.out.println("You: Ask me the questions door keeper, I'm not afraid!");
         System.out.println("What is your name?");

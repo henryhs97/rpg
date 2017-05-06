@@ -1,12 +1,14 @@
-/* A room inherits from inspectable. Each room has a list of NPCs and doors.
+package introduction.Environment;/* A room inherits from inspectable. Each room has a list of NPCs and doors.
  * Helper methods were also implemented to add NPCs to the room. The method
  * the description methods provides descriptions of the chosen objects.
  * 
  */
 
-import introduction.NPCs.EnemyNPC;
-import introduction.NPCs.NunNPC;
-import introduction.NPCs.ShadyVendorNPC;
+import introduction.Environment.Doors.DamageDoor;
+import introduction.Environment.Doors.Door;
+import introduction.Environment.Doors.RiddleDoor;
+import introduction.Inspectable;
+import introduction.NPCs.*;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-/* Consumable class implements three alternative types: Heal (completely cure),
+package introduction.Player;/* introduction.Player.Consumable class implements three alternative types: Heal (completely cure),
  * cure (increase health by points), make_swolle (increase player damage).
  * A consumable its effect and the points corresponding to its effect.
  * A createRandomConsumable method is made and returns a random consumable from a list
