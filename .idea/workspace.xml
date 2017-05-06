@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc7ce2d-06d2-4286-9f83-0904b1f99d0b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Color.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/DamageDoor.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/DamageDoor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/Door.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/Door.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Doors/RiddleDoor.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Doors/RiddleDoor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Environment.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Environment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Environment/Room.class" afterPath="$PROJECT_DIR$/bin/introduction/Environment/Room.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Inspectable.class" afterPath="$PROJECT_DIR$/bin/introduction/Inspectable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/CanFight.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/CanFight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/Interactable.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/Interactable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Interfaces/Shop.class" afterPath="$PROJECT_DIR$/bin/introduction/Interfaces/Shop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Main.class" afterPath="$PROJECT_DIR$/bin/introduction/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/BeggarNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/BeggarNPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/EnemyNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/EnemyNPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/NPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/NPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/NunNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/NunNPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/NPCs/ShadyVendorNPC.class" afterPath="$PROJECT_DIR$/bin/introduction/NPCs/ShadyVendorNPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Consumable.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Consumable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Item.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Player.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/introduction/Player/Weapon.class" afterPath="$PROJECT_DIR$/bin/introduction/Player/Weapon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Environment.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Environment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/introduction/Environment/Room.java" afterPath="$PROJECT_DIR$/src/introduction/Environment/Room.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,92 +21,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BeggarNPC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/NPCs/BeggarNPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnemyNPC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/NPCs/EnemyNPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NPC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/NPCs/NPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NunNPC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/NPCs/NunNPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShadyVendorNPC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/NPCs/ShadyVendorNPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Consumable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/Player/Consumable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Status.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/Player/Status.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/introduction/Player/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/introduction/Player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -136,11 +36,105 @@
       <file leaf-file-name="Environment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Environment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="750">
+              <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Room.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding>
+                <element signature="e#714#715#0" expanded="true" />
+                <element signature="e#738#739#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RiddleDoor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NormalDoor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+              <folding>
+                <element signature="e#222#223#0" expanded="true" />
+                <element signature="e#280#281#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DamageDoor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OurInput.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/OurInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1125">
+              <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Color.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,19 +179,20 @@
         <option value="$PROJECT_DIR$/src/introduction/Input.java" />
         <option value="$PROJECT_DIR$/src/introduction/NPCs/EnemyNPC.java" />
         <option value="$PROJECT_DIR$/src/introduction/NPCs/BeggarNPC.java" />
-        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java" />
-        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java" />
         <option value="$PROJECT_DIR$/src/introduction/Player/Enumerations.java" />
         <option value="$PROJECT_DIR$/src/introduction/Player/Effect.java" />
         <option value="$PROJECT_DIR$/src/introduction/Player/Item.java" />
         <option value="$PROJECT_DIR$/src/introduction/NPCs/ShadyVendorNPC.java" />
         <option value="$PROJECT_DIR$/src/introduction/Player/Consumable.java" />
         <option value="$PROJECT_DIR$/src/introduction/Player/Player.java" />
-        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java" />
         <option value="$PROJECT_DIR$/src/introduction/Inspectable.java" />
         <option value="$PROJECT_DIR$/src/introduction/Environment/TypeOfDoor.java" />
-        <option value="$PROJECT_DIR$/src/introduction/Environment/Room.java" />
         <option value="$PROJECT_DIR$/src/introduction/Main.java" />
+        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java" />
+        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java" />
+        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java" />
+        <option value="$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java" />
+        <option value="$PROJECT_DIR$/src/introduction/Environment/Room.java" />
         <option value="$PROJECT_DIR$/src/introduction/Environment/Environment.java" />
       </list>
     </option>
@@ -938,10 +933,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22914000" />
+    <option name="totallyTimeSpent" value="23953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="29" width="1400" height="780" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -958,7 +954,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1054,14 +1050,6 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/Enemy.java" />
     <entry file="file://$PROJECT_DIR$/src/Player.java" />
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/introduction/Interfaces/Shop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1080,13 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/OurInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1113,74 +1094,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1490#1491#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1788#1789#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/introduction/Environment/TypeOfDoor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1265,10 +1182,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/OurInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/RiddleDoor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/NormalDoor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding>
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Doors/DamageDoor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/introduction/Environment/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="750">
+          <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

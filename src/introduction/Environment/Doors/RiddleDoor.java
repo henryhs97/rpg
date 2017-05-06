@@ -1,5 +1,6 @@
 package introduction.Environment.Doors;
 
+import introduction.Environment.TypeOfDoor;
 import introduction.Interfaces.Interactable;
 import introduction.Player.Player;
 
@@ -11,8 +12,8 @@ public class RiddleDoor extends Door implements Interactable {
 
     private boolean isSolved;
 
-    public RiddleDoor(String description, int nextRoom, int currentRoom) {
-        super(description + " guarded",nextRoom,currentRoom);
+    public RiddleDoor(String description, int nextRoom) {
+        super(description + " guarded",nextRoom, TypeOfDoor.RIDDLE);
         this.isSolved = false;
     }
 

@@ -18,23 +18,20 @@ public class Room extends Inspectable {
     public List<Door> doorList = new ArrayList<>();
     public List<NPC> NPCList = new ArrayList<>();
 
-    private int numOfDoors;
-
-    public Room(String s, int numberOfDoors) {
+    public Room(String s) {
         super(s);
-        this.numOfDoors=numberOfDoors;
     }
 
-    public void addDoorToRoom(String color, int next, int previous, TypeOfDoor typeOfDoor) {
+    public void addDoorToRoom(String color, int next, TypeOfDoor typeOfDoor) {
         switch(typeOfDoor) {
             case NORMAL:
-                this.doorList.add(new NormalDoor(Color.returnRandomColor(), next, previous));
+                this.doorList.add(new NormalDoor(Color.returnRandomColor(), next));
                 break;
             case SPIKY:
-                this.doorList.add(new DamageDoor(Color.returnRandomColor(), next, previous, 5));
+                this.doorList.add(new DamageDoor(Color.returnRandomColor(), next, 5));
                 break;
             case RIDDLE:
-                this.doorList.add(new RiddleDoor(Color.returnRandomColor(), next, previous));
+                this.doorList.add(new RiddleDoor(Color.returnRandomColor(), next));
                 break;
         }
     }
@@ -61,10 +58,10 @@ public class Room extends Inspectable {
 
     public void roomDescription() {
         System.out.print("A " + description +" room with a ");
-        for(int i = 0; i < numOfDoors - 1; i++) {
+        for(int i = 0; i < doorList.size() - 1; i++) {
             System.out.print(doorList.get(i).inspect() + " door and a ");
         }
-        System.out.println(doorList.get(numOfDoors - 1).inspect() + " door.");
+        System.out.println(doorList.get(doorList.size() - 1).inspect() + " door.");
         System.out.print("There's also a ");
         for(int i = 0; i < NPCList.size() - 1; i++) {
             System.out.print(NPCList.get(i).inspect() + " and a ");

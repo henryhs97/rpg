@@ -1,11 +1,13 @@
 package introduction.Environment.Doors;
 
+import introduction.Environment.TypeOfDoor;
+
 public class DamageDoor extends Door {
 
     private int damage;
     
-    public DamageDoor(String description, int next, int previous, int setDamage) {
-        super(description + " spiky", next, previous);
+    public DamageDoor(String description, int next, int setDamage) {
+        super(description + " spiky", next, TypeOfDoor.SPIKY);
         this.damage = setDamage;
     }
 
