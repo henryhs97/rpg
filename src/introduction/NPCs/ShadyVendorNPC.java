@@ -4,7 +4,7 @@
  */
 package introduction.NPCs;
 
-import introduction.Main;
+import introduction.OurInput;
 import introduction.Player.Consumable;
 import introduction.Player.Item;
 import introduction.Player.Weapon;
@@ -14,7 +14,7 @@ import java.util.*;
 
 public class ShadyVendorNPC extends NPC {
 
-	List<Item> inventory = new ArrayList<>();
+	private List<Item> inventory = new ArrayList<>();
 	
     public ShadyVendorNPC() {   	
     	super("shady vendor");
@@ -51,7 +51,7 @@ public class ShadyVendorNPC extends NPC {
     	Scanner input = new Scanner(System.in);
         int choice;
 
-		choice = Main.makeValidChoice(input, -1, this.inventory.size());
+		choice = OurInput.makeValidChoice(input, -1, this.inventory.size());
 
         if( choice == -1)
         	return;

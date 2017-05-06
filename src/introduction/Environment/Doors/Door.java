@@ -4,10 +4,10 @@ package introduction.Environment.Doors;/* A door is implemented with its descrip
 
 import introduction.Inspectable;
 
-public class Door extends Inspectable {
+public abstract class Door extends Inspectable {
 
-	private int nextRoom;
-	private int previousRoom;
+    int nextRoom;
+    int previousRoom;
 	
     public Door(String s, int next, int previous) {
         super(s);

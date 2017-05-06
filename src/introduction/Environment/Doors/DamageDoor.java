@@ -2,7 +2,7 @@ package introduction.Environment.Doors;
 
 public class DamageDoor extends Door {
 
-    int damage;
+    private int damage;
     
     public DamageDoor(String description, int next, int previous, int setDamage) {
         super(description + " spiky", next, previous);

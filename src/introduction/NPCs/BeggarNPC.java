@@ -3,8 +3,7 @@
  */
 
 package introduction.NPCs;
-import introduction.Main;
-import introduction.NPCs.NPC;
+import introduction.OurInput;
 import introduction.Player.Player;
 
 import java.util.Random;
@@ -42,7 +41,7 @@ public class BeggarNPC extends NPC {
     	Scanner input = new Scanner(System.in);
         int howMuch;
 
-		howMuch = Main.makeValidChoice(input,-1, Integer.MAX_VALUE);
+		howMuch = OurInput.makeValidChoice(input,-1, Integer.MAX_VALUE);
 
 		if(howMuch > player.getGold()){
 			System.out.println("  You can't give money you don't have!");

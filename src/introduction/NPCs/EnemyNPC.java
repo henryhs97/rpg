@@ -7,7 +7,7 @@ package introduction.NPCs;/* The implementation of an enemy NPC implements the i
 
 import introduction.Interfaces.CanFight;
 import introduction.Interfaces.Interactable;
-import introduction.Main;
+import introduction.OurInput;
 import introduction.Player.Player;
 
 import java.util.Random;
@@ -50,7 +50,7 @@ public class EnemyNPC extends NPC implements CanFight, Interactable {
         System.out.println("  (1) Ignore the enemy ");
         int choice;
 
-        choice = Main.makeValidChoice(input, 0, 2);
+        choice = OurInput.makeValidChoice(input, 0, 2);
 
         if (choice == -1)
             choice = 1;
@@ -69,7 +69,7 @@ public class EnemyNPC extends NPC implements CanFight, Interactable {
                 System.out.println("  (0) Keep fighting!");
                 System.out.println("  (1) Run away!");
 
-                choice = Main.makeValidChoice(input,0, 2);
+                choice = OurInput.makeValidChoice(input,0, 2);
                 if (choice == -1)
                      choice = 1;
 

@@ -9,23 +9,20 @@ import java.util.Random;
 
 public class Consumable extends Item {
 
-    public static final int HEAL = 0;
-    public static final int CURE = 1;
-    public static final int MAKE_SWOLLE = 2;
+    private static Effect effect;
 
-    int effect;
-    int points;
+    private int points;
 
-    public Consumable (String description, int setEffect, int setCost) {
+    public Consumable (String description, Effect setEffect, int setCost) {
         super(description, 1, setCost);
         this.effect = setEffect;
         switch(effect) {
-            case 0:
+            case HEAL:
                 this.points = 20;
                 break;
-            case 1:
+            case CURE:
                 break;
-            case 2:
+            case BUFF:
                 points = 10;
                 break;
         }
@@ -35,26 +32,26 @@ public class Consumable extends Item {
     	Random ran = new Random();
 		int random = ran.nextInt(4);
 		switch(random) {
-		case 0: return new Consumable("Steroids", Consumable.MAKE_SWOLLE, 4);
-		case 1: return new Consumable("Healing potion", Consumable.HEAL, 1);
-		case 2: return new Consumable("Multivitamin", Consumable.CURE, 2);
-		case 3: return new Consumable("Orange juice", Consumable.CURE, 1);
-		case 4: return new Consumable("Protein bar", Consumable.CURE, 1);
-		default: return new Consumable("Spoiled chips", Consumable.CURE, 1);
+		case 0: return new Consumable("Steroids", Effect.BUFF, 4);
+		case 1: return new Consumable("Healing potion", Effect.HEAL, 1);
+		case 2: return new Consumable("Multivitamin", Effect.CURE, 2);
+		case 3: return new Consumable("Orange juice", Effect.CURE, 1);
+		case 4: return new Consumable("Protein bar", Effect.CURE, 1);
+		default: return new Consumable("Spoiled chips", Effect.CURE, 1);
 		}
     }
 
     public void interact(Player player) {
         switch(effect){
-            case 0:
+            case HEAL:
             	player.healPlayer();
             	System.out.println("You are now healed.");
                 break;
-            case 1:       	
+            case CURE:
                 player.curePlayer(points);
-                System.out.println("Your health has been increased.");
+                System.out.println("You have been cured.");
                 break;
-            case 2:
+            case BUFF:
                 player.increaseDamage(points);
                 System.out.println("You notice your veins begin to pop. You feel ready to punch a wall!");
                 break;

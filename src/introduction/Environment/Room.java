@@ -6,6 +6,7 @@ package introduction.Environment;/* A room inherits from inspectable. Each room 
 
 import introduction.Environment.Doors.DamageDoor;
 import introduction.Environment.Doors.Door;
+import introduction.Environment.Doors.NormalDoor;
 import introduction.Environment.Doors.RiddleDoor;
 import introduction.Inspectable;
 import introduction.NPCs.*;
@@ -14,29 +15,25 @@ import java.util.*;
 
 public class Room extends Inspectable {
 
-    public static final int NORMAL_DOOR = 0;
-    public static final int SPIKY_DOOR = 1;
-    public static final int RIDDLE_DOOR = 2;
-
     public List<Door> doorList = new ArrayList<>();
     public List<NPC> NPCList = new ArrayList<>();
 
-    int numOfDoors;
+    private int numOfDoors;
 
     public Room(String s, int numberOfDoors) {
-        super(s);    
+        super(s);
         this.numOfDoors=numberOfDoors;
     }
-    
-    public void addDoorToRoom(String color, int next, int previous, int typeOfDoor) {
+
+    public void addDoorToRoom(String color, int next, int previous, TypeOfDoor typeOfDoor) {
         switch(typeOfDoor) {
-            case NORMAL_DOOR:
-                this.doorList.add(new Door(Color.returnRandomColor(), next, previous));
+            case NORMAL:
+                this.doorList.add(new NormalDoor(Color.returnRandomColor(), next, previous));
                 break;
-            case SPIKY_DOOR:
+            case SPIKY:
                 this.doorList.add(new DamageDoor(Color.returnRandomColor(), next, previous, 5));
                 break;
-            case RIDDLE_DOOR:
+            case RIDDLE:
                 this.doorList.add(new RiddleDoor(Color.returnRandomColor(), next, previous));
                 break;
         }
@@ -45,25 +42,25 @@ public class Room extends Inspectable {
     public void addEnemyToRoom() {
         this.NPCList.add(EnemyNPC.createRandomEnemy());
     }
-    
+
     public void addVendorToRoom() {
         this.NPCList.add(new ShadyVendorNPC());
     }
-    
+
     public void addNunToRoom() {
         this.NPCList.add(new NunNPC());
     }
-    
+
     public void addBegarToRoom() {
         this.NPCList.add(new BeggarNPC());
     }
 
     public Door returnDoor(int number) {
-    	return doorList.get(number);  	
+        return doorList.get(number);
     }
 
-	public void roomDescription() {
-		System.out.print("A " + description +" room with a ");
+    public void roomDescription() {
+        System.out.print("A " + description +" room with a ");
         for(int i = 0; i < numOfDoors - 1; i++) {
             System.out.print(doorList.get(i).inspect() + " door and a ");
         }
@@ -75,7 +72,7 @@ public class Room extends Inspectable {
         System.out.println(NPCList.get(NPCList.size()-1).inspect());
     }
 
-	public void doorDescription() {
+    public void doorDescription() {
         System.out.println("You look around for doors. You see:");
         for(int i = 0; i < doorList.size(); i++) {
             System.out.println("  (" + i + ") A " + doorList.get(i).inspect() + " door");
@@ -88,6 +85,6 @@ public class Room extends Inspectable {
             System.out.println("  (" + i + ") A " + NPCList.get(i).inspect());
         }
     }
-	
-	
+
+
 }

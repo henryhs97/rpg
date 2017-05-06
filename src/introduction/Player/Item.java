@@ -6,8 +6,8 @@ import introduction.Interfaces.Interactable;
 
 public abstract class Item extends Inspectable implements Interactable {
 
-    protected int uses;
-    protected int cost;
+    int uses;
+    int cost;
 
     public Item(String description, int setUses, int setCost) {
         super(description);

@@ -7,29 +7,28 @@
 package introduction.Player;
 
 import introduction.Environment.Doors.Door;
+import introduction.OurInput;
 import introduction.Interfaces.CanFight;
-import introduction.Main;
+
 
 import java.util.*;
 
 public class Player implements CanFight {
 
-    public static final int HEALTHY = 0;
-    public static final int POISONED = 1;
     private int health;
-    private int status;
+    private Status status;
     private int damage;
     private int gold;
     private int itemChoice;
     private Weapon equippedWeapon = null;
 
-    List<Item> inventory = new ArrayList<>();
+    private List<Item> inventory = new ArrayList<>();
 
     public Player(int setHealth, int setDamage, int setGold){
         this.health = setHealth;
         this.damage = setDamage;
         this.gold = setGold;
-        this.status = HEALTHY;
+        this.status = Status.HEALTHY;
         this.itemChoice = -1;
     }
 
@@ -44,7 +43,7 @@ public class Player implements CanFight {
             System.out.println("  (" + i + ") " + inventory.get(i).inspect());
         }
 
-        this.itemChoice = Main.makeValidChoice(input, -1, this.inventory.size());
+        this.itemChoice = OurInput.makeValidChoice(input, -1, this.inventory.size());
 
         if(itemChoice == -1)
         	return;
@@ -77,9 +76,9 @@ public class Player implements CanFight {
     	System.out.println("Your stats:");
 	    System.out.println("Health: " + health);
 	    System.out.print("Status: ");
-	    if(this.status==0) {
+	    if(this.status==Status.HEALTHY) {
 	    	System.out.println("Healthy");
-	    } else if (this.status==1){
+	    } else if (this.status==Status.POISONED){
 	    	System.out.println("Poisoned");
 	    }
 	    System.out.println("Gold: " + gold);
@@ -117,7 +116,7 @@ public class Player implements CanFight {
         return damage;
     }
 
-    public int getStatus(){
+    public Status getStatus(){
 	    return this.status;
     }
 
@@ -129,13 +128,13 @@ public class Player implements CanFight {
     	this.health += points;
     	if(this.health>100) {
     		this.health=100;
-        	this.changeStatus(HEALTHY);
+        	this.changeStatus(Status.HEALTHY);
     	}
     }
     
     public void healPlayer(){
 	    this.health = 100;
-	    this.changeStatus(HEALTHY);
+	    this.changeStatus(Status.POISONED);
     }
 
     public void receiveDamage(int atk){
@@ -167,7 +166,7 @@ public class Player implements CanFight {
         this.damage -= lessDamage;
     }
 
-    public void changeStatus(int newStatus){
+    public void changeStatus(Status newStatus){
         this.status = newStatus;
     }
 }
