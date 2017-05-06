@@ -21,7 +21,7 @@ public class Room extends Inspectable {
     public List<Door> doorList = new ArrayList<>();
     public List<NPC> NPCList = new ArrayList<>();
 
-    int numOfDoors;
+    private int numOfDoors;
 
     public Room(String s, int numberOfDoors) {
         super(s);    

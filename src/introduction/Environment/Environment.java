@@ -4,59 +4,63 @@
  */
 package introduction.Environment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import introduction.Inspectable;
+import introduction.Environment.Doors.Door;
 
 public class Environment{
-	int numberOfRooms = 6;
-	
-	private Room[] rooms=new Room[numberOfRooms];
+	private int numberOfRooms = 6;
+	public List<Room> rooms = new ArrayList<>();
 
 	public Environment() {
-		rooms[0]=new Room(Color.returnRandomColor(), 2);  //a random 
-		rooms[0].addDoorToRoom( Color.returnRandomColor(), 1, 0, Room.NORMAL_DOOR);
-		rooms[0].addDoorToRoom( Color.returnRandomColor(), 3, 0, Room.SPIKY_DOOR);
-		rooms[0].addVendorToRoom();
-		rooms[0].addNunToRoom();
 		
-		rooms[1]=new Room(Color.returnRandomColor(), 3);  //a random 
-		rooms[1].addDoorToRoom( Color.returnRandomColor(), 2, 1, Room.NORMAL_DOOR);
-		rooms[1].addDoorToRoom( rooms[0].returnDoor(0).inspect(), 0, 1, Room.NORMAL_DOOR);
-		rooms[1].addDoorToRoom( Color.returnRandomColor(), 3, 1, Room.RIDDLE_DOOR);
-		rooms[1].addEnemyToRoom();
-		rooms[1].addEnemyToRoom();
-		rooms[1].addBegarToRoom();
+		rooms.add(new Room(Color.returnRandomColor(), 2) );
+		rooms.get(0).addDoorToRoom( Color.returnRandomColor(), 1, 0, Room.NORMAL_DOOR);
+		rooms.get(0).addDoorToRoom( Color.returnRandomColor(), 3, 0, Room.SPIKY_DOOR);
+		rooms.get(0).addVendorToRoom();
+		rooms.get(0).addNunToRoom();
+		
+		rooms.add(new Room(Color.returnRandomColor(), 3) );
+		rooms.get(1).addDoorToRoom( Color.returnRandomColor(), 2, 1, Room.NORMAL_DOOR);
+		rooms.get(1).addDoorToRoom( rooms.get(0).returnDoor(0).inspect(), 0, 1, Room.NORMAL_DOOR);
+		rooms.get(1).addDoorToRoom( Color.returnRandomColor(), 3, 1, Room.RIDDLE_DOOR);
+		rooms.get(1).addEnemyToRoom();
+		rooms.get(1).addEnemyToRoom();
+		rooms.get(1).addBegarToRoom();
 			
-		rooms[2]=new Room(Color.returnRandomColor(), 2);  //a random 
-		rooms[2].addDoorToRoom( Color.returnRandomColor(), 4, 2, Room.NORMAL_DOOR);
-		rooms[2].addDoorToRoom( rooms[1].returnDoor(0).inspect(), 1, 2, Room.NORMAL_DOOR);
-		rooms[2].addNunToRoom();
-		rooms[2].addEnemyToRoom();
+		rooms.add(new Room(Color.returnRandomColor(), 2) );
+		rooms.get(2).addDoorToRoom( Color.returnRandomColor(), 4, 2, Room.NORMAL_DOOR);
+		rooms.get(2).addDoorToRoom( rooms.get(1).returnDoor(0).inspect(), 1, 2, Room.NORMAL_DOOR);
+		rooms.get(2).addNunToRoom();
+		rooms.get(2).addEnemyToRoom();
 		
-		rooms[3]=new Room(Color.returnRandomColor(), 3);  //a random
-		rooms[3].addDoorToRoom( rooms[0].returnDoor(1).inspect(), 0, 3, Room.SPIKY_DOOR);
-		rooms[3].addDoorToRoom( rooms[1].returnDoor(2).inspect(), 1, 3, Room.RIDDLE_DOOR);
-		rooms[3].addDoorToRoom( Color.returnRandomColor(), 4, 3, Room.NORMAL_DOOR);
-		rooms[3].addVendorToRoom();
+		rooms.add(new Room(Color.returnRandomColor(), 3) ); //a random
+		rooms.get(3).addDoorToRoom( rooms.get(0).returnDoor(1).inspect(), 0, 3, Room.SPIKY_DOOR);
+		rooms.get(3).addDoorToRoom( rooms.get(1).returnDoor(2).inspect(), 1, 3, Room.RIDDLE_DOOR);
+		rooms.get(3).addDoorToRoom( Color.returnRandomColor(), 4, 3, Room.NORMAL_DOOR);
+		rooms.get(3).addVendorToRoom();
 		
-		rooms[4]=new Room(Color.returnRandomColor(), 3);  //a random 
-		rooms[4].addDoorToRoom( Color.returnRandomColor(), 5, 4, Room.NORMAL_DOOR);
-		rooms[4].addDoorToRoom( rooms[2].returnDoor(0).inspect(), 2, 4, Room.NORMAL_DOOR);
-		rooms[4].addDoorToRoom( rooms[3].returnDoor(1).inspect(), 3, 4, Room.NORMAL_DOOR);
-		rooms[4].addVendorToRoom();
-		rooms[4].addEnemyToRoom();
+		rooms.add(new Room(Color.returnRandomColor(), 3) ); //a random 
+		rooms.get(4).addDoorToRoom( Color.returnRandomColor(), 5, 4, Room.NORMAL_DOOR);
+		rooms.get(4).addDoorToRoom( rooms.get(2).returnDoor(0).inspect(), 2, 4, Room.NORMAL_DOOR);
+		rooms.get(4).addDoorToRoom( rooms.get(3).returnDoor(1).inspect(), 3, 4, Room.NORMAL_DOOR);
+		rooms.get(4).addVendorToRoom();
+		rooms.get(4).addEnemyToRoom();
 		
-		rooms[5]=new Room(Color.returnRandomColor(), 1);  //a random 
-		rooms[5].addDoorToRoom( rooms[4].returnDoor(0).inspect(), 4, 5, Room.NORMAL_DOOR);
-		rooms[5].addEnemyToRoom();
-		rooms[5].addNunToRoom();
-		rooms[5].addBegarToRoom();
+		rooms.add(new Room(Color.returnRandomColor(), 1) );  //a random 
+		rooms.get(5).addDoorToRoom( rooms.get(4).returnDoor(0).inspect(), 4, 5, Room.NORMAL_DOOR);
+		rooms.get(5).addEnemyToRoom();
+		rooms.get(5).addNunToRoom();
+		rooms.get(3).addBegarToRoom();
 	}
 	
 	public Room returnRoom(int roomNumber) {
 		if(roomNumber<numberOfRooms) {
-			return rooms[roomNumber];
+			return rooms.get(roomNumber);
 		} else {
-			return rooms[roomNumber];
+			return rooms.get(roomNumber);
 			//ADD CORRECT ELSE IMPLEMENTATION
 		}
 	}
