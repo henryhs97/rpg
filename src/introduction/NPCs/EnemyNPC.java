@@ -45,7 +45,7 @@ public class EnemyNPC extends NPC implements CanFight, Interactable {
     public void interact(Player player) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Stranger: Hasn't anyone taught not to talk to strangers?");
+        System.out.println("Stranger: Hasn't anyone taught you not to talk to strangers?");
         System.out.println("  (0) Attack the enemy!");
         System.out.println("  (1) Ignore the enemy ");
         int choice;

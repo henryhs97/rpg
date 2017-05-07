@@ -3,17 +3,19 @@ package introduction;/* The main function creates the main dialogue with the use
  */
 
 import introduction.Environment.*;
+
+import java.io.*;
+import java.util.*;
 import introduction.Environment.Doors.*;
 import introduction.NPCs.EnemyNPC;
 import introduction.Player.*;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class Main { 
 	public static void main(String[] args) {
 		Scanner input= new Scanner(System.in);
-		
+		          
 		Environment environment = new Environment();  //makes environment
 		Player player = new Player(100,5, 5);
 
@@ -31,10 +33,15 @@ public class Main {
 			System.out.println("  (2) Check your inventory");
 			System.out.println("  (3) Check your stats");
 			System.out.println("  (4) Look for people");
-
-			choice = OurInput.makeValidChoice(input,-1, 5);
-
-			System.out.print("You see: ");			
+			System.out.println("  (5) Quicksave");
+			System.out.println("  (6) Quickload");
+			System.out.println("  (7) Save");
+			System.out.println("  (8) Load");
+			
+			choice = OurInput.makeValidChoice(input,-1, 9);
+			if(choice!=6 && choice!= 5 && choice!=3 && choice!=2 && choice!=7 && choice!=8) {
+				System.out.print("You see: ");			
+			}
 			switch(choice) {
                 case 0:
                     environment.returnRoom(number).roomDescription();
@@ -88,9 +95,65 @@ public class Main {
 	                    }
                     }
 					break;
+                case 5:
+                	saveGame("quicksave", environment, player);
+                	break;
+                case 7: 
+                	System.out.println("File name?");
+                	input.nextLine();
+                	String saveName = input.nextLine(); 
+                	saveGame(saveName, environment, player);              	
+                	break;
+                case 6:
+                	try{
+                    	FileInputStream fileIn = new FileInputStream("./Savegames/quicksave.ser");
+                        ObjectInputStream in = new ObjectInputStream(fileIn);
+                        environment = (Environment) in.readObject();
+                        player = (Player) in.readObject();
+                     	in.close();
+                     	fileIn.close();
+                     	System.out.println("Loaded quicksave.");
+                	}catch(IOException i) {
+                		i.printStackTrace();
+                		return;
+                	}catch(ClassNotFoundException c) {
+                		System.out.println("Employee class not found");
+                		c.printStackTrace();
+                		return;
+                	}
+                	break;
+                case 8:
+                	//try{
+                	//	File folder = new File("./Savegames");
+                		//List<File> listOfSaves = new ArrayList<>(folder.listFiles());
+                		
+                 	//}
 			}
 		}
 	}
 
+	
+	static void saveGame(String gameName, Environment environment, Player player) {
+		try {
+			File saveFile = new File("./Savegames/" + gameName + ".ser");  
+            FileOutputStream fileOut = new FileOutputStream(saveFile);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(environment);
+            out.writeObject(player);
+            out.close();
+            fileOut.close();
+            System.out.println("Quicksaved.");
+    	} catch(NotSerializableException classException){
+    		System.out.println("ERROR: Class is not serializable: ");
+    		System.out.println(classException.getLocalizedMessage());
+    		System.exit(0);
+        } catch(IOException ioException) {
+        	System.out.println("ERROR: Unknown IO error.");
+        	System.out.println("Possible problem with savefile");
+        	ioException.printStackTrace();
+        	System.exit(0);
+        }
+	}
+	
 
 }

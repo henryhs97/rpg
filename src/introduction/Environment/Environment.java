@@ -5,9 +5,12 @@
 package introduction.Environment;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-public class Environment{
+public class Environment implements java.io.Serializable{
+	private static final long serialVersionUID = 42L ;
+
 	private int numberOfRooms = 6;
 
 	private List<Room> rooms = new ArrayList<>();

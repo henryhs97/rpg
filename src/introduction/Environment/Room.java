@@ -13,8 +13,7 @@ import introduction.NPCs.*;
 
 import java.util.*;
 
-public class Room extends Inspectable {
-
+public class Room extends Inspectable{
     public List<Door> doorList = new ArrayList<>();
     public List<NPC> NPCList = new ArrayList<>();
 

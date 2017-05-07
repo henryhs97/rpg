@@ -13,8 +13,8 @@ import introduction.Interfaces.CanFight;
 
 import java.util.*;
 
-public class Player implements CanFight {
-
+public class Player implements CanFight, java.io.Serializable{
+	private static final long serialVersionUID = 42L ;
     private int health;
     private Status status;
     private int damage;
