@@ -48,7 +48,7 @@ public class Player implements CanFight, java.io.Serializable{
         if(itemChoice == -1)
         	return;
 
-        if(inventory.get(itemChoice) instanceof Weapon) {
+        if(inventory.get(itemChoice).returnType() == TypeOfItem.WEAPON) {
             if (this.itemChoice != -1) {
                 if (equippedWeapon == null) {
                     inventory.get(this.itemChoice).interact(this);
@@ -84,7 +84,7 @@ public class Player implements CanFight, java.io.Serializable{
 	    System.out.println("Gold: " + gold);
 	    System.out.println("Attack points: " + damage);
 	    if(equippedWeapon != null) {
-            System.out.println("introduction.Player.Weapon: " + equippedWeapon.inspect());
+            System.out.println("Weapon: " + equippedWeapon.inspect());
             System.out.println("Number of uses left: " + equippedWeapon.checkCondition());
         }else{
 	        System.out.println("No weapon");

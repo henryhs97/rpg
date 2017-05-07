@@ -50,4 +50,8 @@ public class Weapon extends Item {
         return damage;
     }
 
+    public TypeOfItem returnType() {
+        return TypeOfItem.WEAPON;
+    }
+
 }

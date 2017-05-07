@@ -57,5 +57,9 @@ public class Consumable extends Item {
                 break;
         }
     }
-    
+
+    @Override
+    public TypeOfItem returnType() {
+        return TypeOfItem.CONSUMABLE;
+    }
 }
