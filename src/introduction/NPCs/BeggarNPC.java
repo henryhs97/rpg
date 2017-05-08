@@ -15,7 +15,7 @@ public class BeggarNPC extends NPC {
     	super("poor beggar sleeping on a cardboard");
     }
 
-	private String beggarDialogue() {
+	private String randomResponse() {
 		String s = null;
 		Random ran = new Random();
 		int choice = ran.nextInt(3) + 1;
@@ -48,7 +48,7 @@ public class BeggarNPC extends NPC {
 			return;
 		}
         player.removeGold(howMuch);
-		System.out.println(this.beggarDialogue());
+		System.out.println(this.randomResponse());
 	}
 
 }

@@ -1,8 +1,14 @@
 package introduction.Interfaces;
 
+import introduction.Player.Item;
+
 public interface 	Shop {
 
-	public void showShopItems();
+	public int showShopItems();
 
-	public void putInInventory(int itemChoice);
+	public Item buyItem(int itemChoice);
+
+	public String inspectItem(int itemChoice);
+
+	public int itemCost(int itemChoice);
 }

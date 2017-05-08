@@ -24,13 +24,13 @@ public class Room extends Inspectable{
     public void addDoorToRoom(String color, int next, TypeOfDoor typeOfDoor) {
         switch(typeOfDoor) {
             case NORMAL:
-                this.doorList.add(new NormalDoor(Color.returnRandomColor(), next));
+                this.doorList.add(new NormalDoor(color, next));
                 break;
             case SPIKY:
-                this.doorList.add(new DamageDoor(Color.returnRandomColor(), next, 5));
+                this.doorList.add(new DamageDoor(color, next, 5));
                 break;
             case RIDDLE:
-                this.doorList.add(new RiddleDoor(Color.returnRandomColor(), next));
+                this.doorList.add(new RiddleDoor(color, next));
                 break;
         }
     }

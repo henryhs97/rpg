@@ -1,5 +1,6 @@
-package introduction;/* The main function creates the main dialogue with the user, each providing the
- * player with 5 options. The game ends when (if) the player dies.
+package introduction;
+/* The main function creates the main dialogue with the user, each providing the
+ * player with 8 options. The game ends when (if) the player dies.
  */
 
 import introduction.Environment.*;
@@ -53,22 +54,10 @@ public class Main {
                     choice = OurInput.makeValidChoice(input,-1, environment.returnRoom(number).doorList.size());
 
                     if(choice != -1) {
-	                    if (player.getStatus() == Status.POISONED) {
-	                    	System.out.println("The poison is slowly killing you..");
-	                        player.poisonDamage();
-	                    }
-	                    if (environment.returnRoom(number).returnDoor(choice).returnType() == TypeOfDoor.SPIKY) {
-	                        player.receiveDamage(((DamageDoor) environment.returnRoom(number).returnDoor(choice)).doorDamage());
-	                        player.changeStatus(Status.POISONED);
-	                    }else if(environment.returnRoom(number).returnDoor(choice).returnType() == TypeOfDoor.RIDDLE){
-	                    	RiddleDoor tempDoorPointer = (RiddleDoor) environment.returnRoom(number).returnDoor(choice);
-	                    	if(!tempDoorPointer.isRiddleSolved()) {
-								tempDoorPointer.interact(player);
-								tempDoorPointer.weSolvedIt();
-							}
-							if(player.getHealth() <= 0) {
-								break;
-							}
+						environment.returnRoom(number).returnDoor(choice).interact(player);
+						if (player.getStatus() == Status.POISONED) {
+							System.out.println("The poison is slowly killing you..");
+							player.poisonDamage();
 						}
 	                    number = player.enterDoor(environment.returnRoom(number).returnDoor(choice));
                     }
@@ -98,36 +87,60 @@ public class Main {
                 case 5:
                 	saveGame("quicksave", environment, player);
                 	break;
+				case 6:
+					try{
+						FileInputStream fileIn = new FileInputStream("./Savegames/quicksave.ser");
+						ObjectInputStream in = new ObjectInputStream(fileIn);
+						environment = (Environment) in.readObject();
+						player = (Player) in.readObject();
+						in.close();
+						fileIn.close();
+						System.out.println("Loaded quicksave.");
+					}catch(IOException i) {
+						i.printStackTrace();
+						return;
+					}catch(ClassNotFoundException c) {
+						System.out.println("Employee class not found");
+						c.printStackTrace();
+						return;
+					}
+					break;
                 case 7: 
                 	System.out.println("File name?");
                 	input.nextLine();
                 	String saveName = input.nextLine(); 
                 	saveGame(saveName, environment, player);              	
                 	break;
-                case 6:
-                	try{
-                    	FileInputStream fileIn = new FileInputStream("./Savegames/quicksave.ser");
-                        ObjectInputStream in = new ObjectInputStream(fileIn);
-                        environment = (Environment) in.readObject();
-                        player = (Player) in.readObject();
-                     	in.close();
-                     	fileIn.close();
-                     	System.out.println("Loaded quicksave.");
-                	}catch(IOException i) {
-                		i.printStackTrace();
-                		return;
-                	}catch(ClassNotFoundException c) {
-                		System.out.println("Employee class not found");
-                		c.printStackTrace();
-                		return;
-                	}
-                	break;
                 case 8:
-                	//try{
-                	//	File folder = new File("./Savegames");
-                		//List<File> listOfSaves = new ArrayList<>(folder.listFiles());
-                		
-                 	//}
+                	File folder = new File("./Savegames");
+                	List<File> files= new ArrayList<>(Arrays.asList(folder.listFiles()));
+                	if(files.size() == 0){
+                		System.out.println("No saved games.");
+					}else {
+						for (File currentFile : files) {
+							System.out.println("  (" + files.indexOf(currentFile) + ") " + currentFile.getName());
+						}
+						choice = OurInput.makeValidChoice(input,-1,files.size());
+						try{
+							FileInputStream fileIn = new FileInputStream(files.get(choice));
+							ObjectInputStream in = new ObjectInputStream(fileIn);
+							environment = (Environment) in.readObject();
+							player = (Player) in.readObject();
+							in.close();
+							fileIn.close();
+							System.out.println("Loaded save.");
+						}catch(IOException ioException) {
+							System.out.println("ERROR: Unknown IO error.");
+							System.out.println("Possible problem with savefile");
+							ioException.printStackTrace();
+							System.exit(0);
+						}catch(ClassNotFoundException c) {
+							System.out.println("ERROR: Unable to deserialize class");
+							c.printStackTrace();
+							System.exit(0);
+						}
+						break;
+					}
 			}
 		}
 	}

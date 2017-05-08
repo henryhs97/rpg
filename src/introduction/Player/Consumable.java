@@ -37,7 +37,7 @@ public class Consumable extends Item {
 		case 2: return new Consumable("Multivitamin", Effect.CURE, 2);
 		case 3: return new Consumable("Orange juice", Effect.CURE, 1);
 		case 4: return new Consumable("Protein bar", Effect.CURE, 1);
-		default: return new Consumable("Spoiled chips", Effect.CURE, 1);
+		default: return new Consumable("Herbal leaves", Effect.CURE, 1);
 		}
     }
 

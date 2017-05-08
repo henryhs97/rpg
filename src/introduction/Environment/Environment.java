@@ -39,7 +39,7 @@ public class Environment implements java.io.Serializable{
 
 		rooms.add(new Room(Color.returnRandomColor()) ); //a random
 		rooms.get(3).addDoorToRoom( rooms.get(0).returnDoor(1).inspect(), 0, TypeOfDoor.SPIKY);
-		rooms.get(3).addDoorToRoom( rooms.get(1).returnDoor(2).inspect(), 1, TypeOfDoor.RIDDLE);
+		rooms.get(3).addDoorToRoom( rooms.get(1).returnDoor(2).inspect(), 1, TypeOfDoor.NORMAL);
 		rooms.get(3).addDoorToRoom( Color.returnRandomColor(), 4, TypeOfDoor.NORMAL);
 		rooms.get(3).addVendorToRoom();
 

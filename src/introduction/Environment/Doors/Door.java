@@ -4,9 +4,11 @@ package introduction.Environment.Doors;/* A door is implemented with its descrip
 
 import introduction.Environment.TypeOfDoor;
 import introduction.Inspectable;
+import introduction.Interfaces.Interactable;
+import introduction.Player.Player;
 
 
-public abstract class Door extends Inspectable {
+public abstract class Door extends Inspectable implements Interactable {
 
     int nextRoom;
     TypeOfDoor type;
@@ -20,6 +22,8 @@ public abstract class Door extends Inspectable {
 	public int returnNextRoom(){
         return nextRoom;
     }
+
+    abstract public void interact(Player player);
 
     public TypeOfDoor returnType(){
 	    return type;

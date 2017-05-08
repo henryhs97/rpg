@@ -1,6 +1,8 @@
 package introduction.Environment.Doors;
 
 import introduction.Environment.TypeOfDoor;
+import introduction.Player.Player;
+import introduction.Player.Status;
 
 public class DamageDoor extends Door {
 
@@ -11,10 +13,10 @@ public class DamageDoor extends Door {
         this.damage = setDamage;
     }
 
-    public int doorDamage() {
+    public void interact(Player player) {
         System.out.println("The spikes tear your skin as you go through the door.");
         System.out.println("You start feeling ill..");
-
-        return damage;
+        player.receiveDamage(damage);
+        player.changeStatus(Status.POISONED);
     }
 }

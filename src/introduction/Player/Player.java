@@ -7,6 +7,7 @@
 package introduction.Player;
 
 import introduction.Environment.Doors.Door;
+import introduction.Interfaces.Shop;
 import introduction.OurInput;
 import introduction.Interfaces.CanFight;
 
@@ -66,11 +67,7 @@ public class Player implements CanFight, java.io.Serializable{
         }
 
     }
-	
-	public void addItemToPlayerInventory(Item item) {
-		this.inventory.add(item);
-		System.out.println(item.inspect() + " has been put in your inventory.");
-	}
+
 
     public void checkStats(){
     	System.out.println("Your stats:");
@@ -168,5 +165,23 @@ public class Player implements CanFight, java.io.Serializable{
 
     public void changeStatus(Status newStatus){
         this.status = newStatus;
+    }
+
+    public void shopAtVendor(Shop shop){
+        Scanner input = new Scanner(System.in);
+        int choice;
+
+        choice = OurInput.makeValidChoice(input, -1, shop.showShopItems());
+
+        if( choice == -1)
+            return;
+
+        if( this.removeGold(shop.itemCost(choice)) ) {
+            System.out.println(shop.inspectItem(choice) + " has been put in your inventory.");
+            this.inventory.add(shop.buyItem(choice));
+            System.out.println("Vendor: Pleasure doing business with you.");
+        } else {
+            System.out.println("Vendor: Not enough money? No can do..");
+        }
     }
 }

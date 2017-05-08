@@ -14,36 +14,18 @@ public class NunNPC extends NPC {
     	super("nun");	
     }
 	
-	private String nunDialogue(int typeOfResponse) {
-		String s = null;
-		switch(typeOfResponse) {
-		case 1:
-			s= "You seem just fine. Why bother asking god for more?";
-			break;
-		case 2:
-			s= "Here sweety, have a band aid.";
-			break;
-		case 3:
-			s= "My goodness, you're going to need a lot of stitches for this! That should do it...";
-			break;
-		case 4:
-			s= "How are you still alive with that wound on your chest? Here, this should make it better.";
-		}
-		return s;
-	}
-	
     public void interact(Player player) {
     	if(player.getHealth()==100) {
-    		System.out.println(this.nunDialogue(1));
+    		System.out.println("You seem just fine. Why bother asking god for more?");
     	}
     	else if(player.getHealth()>70) {
-    		System.out.println(this.nunDialogue(2));
+    		System.out.println("Here sweety, have a band aid.");
     	}
     	else if(player.getHealth()>40) {
-    		System.out.println(this.nunDialogue(3));
+    		System.out.println("My goodness, you're going to need a lot of stitches for this! That should do it...");
     	}
     	else if(player.getHealth()>0) {
-    		System.out.println(this.nunDialogue(4));
+    		System.out.println("How are you still alive with that wound on your chest? Here, this should make it better.");
     	}
     	player.healPlayer();
     }
